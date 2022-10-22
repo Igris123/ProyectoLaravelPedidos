@@ -22,7 +22,7 @@ Route::get('/', function () {
     return view('landingpage');
 });*/
 
-Route::get('/', [App\Http\Controllers\landingPageController::class, 'show']);
+Route::get('/', [App\Http\Controllers\landingPageController::class, 'index'])->name('landingpage');
 
 
 /*
@@ -35,25 +35,11 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/dash', function () {
-        return view('dash.index');
-    })->name('dash');
-    Route::get('/pedidos', function () {
-        return view('pedidos');
-    })->name('pedidos');
-    Route::get('/crearPedido', function () {
-        return view('crearPedido');
-    })->name('crearPedido');
-    Route::get('/clientes', function () {
-        return view('clientes');
-    })->name('clientes');
-    Route::get('/conductores', function () {
-        return view('conductores');
-    })->name('conductores');
-    Route::get('/crearConductores', function () {
-        return view('crearConductores');
-    })->name('crearConductores');
-    Route::get('/modificarPedido', function () {
-        return view('modificarPedido');
-    })->name('modificarPedido');
+    Route::get('/dash', [App\Http\Controllers\DashController::class, 'index'])->name('dashboard');
+    Route::get('/pedidos', [App\Http\Controllers\pedidosController::class, 'retornoPedido'])->name('pedidos');
+    Route::get('/crearPedido', [App\Http\Controllers\crearPedidoController::class, 'retornoCrearPedido'])->name('crearPedido');
+    Route::get('/clientes', [App\Http\Controllers\clientesController::class, 'retornoClientes']);
+    Route::get('/conductores', [App\Http\Controllers\conductoresController::class, 'retornoConductores']);
+    Route::get('/crearConductores', [App\Http\Controllers\crearConductorController::class, 'retornoCrearConductor'])->name('crearConductor');
+    Route::get('/modificarPedido', [App\Http\Controllers\modificarPedidoController::class, 'retornoModificarPedido'])->name('modificarPedido');
 });
