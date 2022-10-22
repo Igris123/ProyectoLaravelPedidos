@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class crearConductoresController extends Controller
+class crearConductorController extends Controller
 {
-    public function retornoCrearConductores(){
+    public function retornoCrearConductor(){
         return view('crearConductores');
     }
 }
