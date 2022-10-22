@@ -10,3 +10,6 @@ class pedidosController extends Controller
         return view('pedidos');
     }
 }
+
+
+

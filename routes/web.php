@@ -13,14 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+/*
 Route::get('/welcome', function () {
     return view('welcome');
 });
 
 Route::get('/', function () {
     return view('landingpage');
-});
+});*/
+
+Route::get('/', [App\Http\Controllers\landingPageController::class, 'show']);
+
 
 /*
 Route::get('/', function () {
