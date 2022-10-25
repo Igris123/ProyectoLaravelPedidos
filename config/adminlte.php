@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE', 
+    'logo' => '<b>Faad</b>Express', 
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -253,7 +253,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => 'dash',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -387,7 +387,7 @@ return [
         [
             'text'       => 'Ver Pedidos',
             'icon_color' => 'red',
-            'url'        => '/modificarPedido',
+            'url'        => '/pedidos',
         ],
         
         //Ver Conductores
