@@ -22,13 +22,18 @@ Route::get('/', function () {
     return view('landingpage');
 });*/
 
-Route::get('/', [App\Http\Controllers\landingPageController::class, 'show']);
+Route::get('/', [App\Http\Controllers\landingPageController::class, 'index'])->name('landingpage');
 
 
 /*
 Route::get('/', function () {
     return view('auth.login');
 });*/
+
+
+Route::get('test', function () {
+    return view('test');
+});
 
 Route::middleware([
     'auth:sanctum',
