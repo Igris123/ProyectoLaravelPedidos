@@ -25,14 +25,10 @@ Route::get('/', function () {
 Route::get('/', [App\Http\Controllers\landingPageController::class, 'index'])->name('landingpage');
 
 
-/*
-Route::get('/', function () {
-    return view('auth.login');
-});*/
 
-
-Route::get('test', function () {
-    return view('test');
+Route::get('/fire', function () {
+        event(new PedidosChangedEvent); 
+    return 'event fired';
 });
 
 Route::middleware([
