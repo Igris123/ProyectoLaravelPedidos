@@ -26,10 +26,7 @@ Route::get('/', [App\Http\Controllers\landingPageController::class, 'index'])->n
 
 
 
-Route::get('/fire', function () {
-        event(new PedidosChangedEvent); 
-    return 'event fired';
-});
+
 
 Route::middleware([
     'auth:sanctum',
