@@ -24,9 +24,14 @@ class User extends Authenticatable
      * @var string[]
      */
     protected $fillable = [
+        'rut',
         'name',
+        'apellido',
         'email',
         'password',
+        'telefono',
+        'direccion',
+
     ];
 
     /**
@@ -37,8 +42,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
-        'two_factor_recovery_codes',
-        'two_factor_secret',
+        // 'two_factor_recovery_codes',
+        // 'two_factor_secret',
     ];
 
     /**
@@ -47,7 +52,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
+        // 'email_verified_at' => 'datetime',
     ];
 
     /**
@@ -56,6 +61,9 @@ class User extends Authenticatable
      * @var array
      */
     protected $appends = [
-        'profile_photo_url',
+        // 'profile_photo_url',
     ];
+
+
+ 
 }
