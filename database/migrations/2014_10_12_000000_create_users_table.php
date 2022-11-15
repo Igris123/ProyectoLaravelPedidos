@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->string('apellido')->nullable();
             $table->string('email')->unique()->nullable();
-            $table->integer('telefono')->nullable();
+            $table->BigInteger('telefono');
             $table->string('direccion')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->nullable();

@@ -30,6 +30,7 @@
                 <td>{{ $vehiculo->modelo}}</td>
                 <td>{{ $vehiculo->annio}}</td>
                 <td>{{ $vehiculo->tipo}}</td>
+                
                 <td>
                     <form action="{{route ('vehiculos.destroy', $vehiculo->id)}}" method="POST">
                     <a class="btn btn-info" href="/vehiculos/{{ $vehiculo->id}}/edit">Editar</a>

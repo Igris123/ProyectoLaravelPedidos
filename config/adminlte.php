@@ -411,12 +411,18 @@ return [
             'url'        => '/clientes',
         ],
 
-        //CURD
+        //CRUD
         ['header' => 'CRUD'],
         [
             'text'       => 'Vehiculo',
             'icon_color' => 'green',
             'url'        => 'vehiculos',
+        ],
+
+        [
+            'text'       => 'Ver Pedidos',
+            'icon_color' => 'purple',
+            'url'        => 'pedidos',
         ],
     ],
 
