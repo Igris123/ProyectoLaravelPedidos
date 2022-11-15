@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-    <p>Index pedido</p>
+    <p>Editar precio</p>
 @stop
 
 @section('css')

@@ -414,16 +414,39 @@ return [
         //CRUD
         ['header' => 'CRUD'],
         [
+            'text'       => 'Usuarios',
+            'icon_color' => 'black',
+            'url'        => 'users',
+        ],
+        [
             'text'       => 'Vehiculo',
             'icon_color' => 'green',
             'url'        => 'vehiculos',
         ],
+<<<<<<< HEAD
 
         [
             'text'       => 'Ver Pedidos',
             'icon_color' => 'purple',
             'url'        => 'pedidos',
         ],
+=======
+        [
+            'text'       => 'Ver pedidos',
+            'icon_color' => 'purple',
+            'url'        => 'pedidos',
+        ],
+        [
+            'text'       => 'Ver servicios',
+            'icon_color' => 'brown',
+            'url'        => 'servicios',
+        ],
+        [
+            'text'       => 'Ver precios',
+            'icon_color' => 'blue',
+            'url'        => 'precios',
+        ],
+>>>>>>> da52587aef20c18180c6c1ff554d0611882985c0
     ],
 
     /*

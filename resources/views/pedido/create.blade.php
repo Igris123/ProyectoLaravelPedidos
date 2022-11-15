@@ -7,6 +7,7 @@
 @stop
 
 @section('content')
+<<<<<<< HEAD
     <h2>Crear Pedido</h2>
     <form action="/pedidos" method="POST">
     @csrf
@@ -55,6 +56,9 @@
     <a href="/pedidos" class="btn btn-secondary" tabindex="5">Cancelar</a>
     <button type="submit" class="btn btn-primary" tabindex="6">Guardar</button>
     </form>
+=======
+    <p>Crear Pedido</p>
+>>>>>>> da52587aef20c18180c6c1ff554d0611882985c0
 @stop
 
 @section('css')

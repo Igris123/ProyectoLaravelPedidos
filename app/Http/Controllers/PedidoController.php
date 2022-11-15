@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+<<<<<<< HEAD
+=======
+use App\Models\Pedido;
+>>>>>>> da52587aef20c18180c6c1ff554d0611882985c0
 
 class PedidoController extends Controller
 {
@@ -24,7 +28,11 @@ class PedidoController extends Controller
      */
     public function create()
     {
+<<<<<<< HEAD
         return view('pedido.create');
+=======
+        //
+>>>>>>> da52587aef20c18180c6c1ff554d0611882985c0
     }
 
     /**
@@ -35,6 +43,7 @@ class PedidoController extends Controller
      */
     public function store(Request $request)
     {
+<<<<<<< HEAD
         $pedidos = new Pedido();
         $pedidos->id = $request -> get('id');
         $pedidos->destinatario = $request -> get('destinatario');
@@ -46,6 +55,9 @@ class PedidoController extends Controller
         $pedidos->save();
 
         return redirect('/pedidos');
+=======
+        //
+>>>>>>> da52587aef20c18180c6c1ff554d0611882985c0
     }
 
     /**
@@ -67,8 +79,12 @@ class PedidoController extends Controller
      */
     public function edit($id)
     {
+<<<<<<< HEAD
         $pedido = Pedido::find($id);
         return view('pedido.edit')->with('pedido', $pedido);
+=======
+        //
+>>>>>>> da52587aef20c18180c6c1ff554d0611882985c0
     }
 
     /**
@@ -80,6 +96,7 @@ class PedidoController extends Controller
      */
     public function update(Request $request, $id)
     {
+<<<<<<< HEAD
         $pedidos = new Pedido();
         $pedidos->id = $request -> get('id');
         $pedidos->destinatario = $request -> get('destinatario');
@@ -91,6 +108,9 @@ class PedidoController extends Controller
         $pedidos->save();
 
         return redirect('/pedidos');
+=======
+        //
+>>>>>>> da52587aef20c18180c6c1ff554d0611882985c0
     }
 
     /**
@@ -101,9 +121,15 @@ class PedidoController extends Controller
      */
     public function destroy($id)
     {
+<<<<<<< HEAD
         $pedido = Pedido::find($id);
         $pedido -> delete();
         return redirect ('/pedidos');
     }
 }
 
+=======
+        //
+    }
+}
+>>>>>>> da52587aef20c18180c6c1ff554d0611882985c0
