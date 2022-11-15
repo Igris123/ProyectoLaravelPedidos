@@ -414,9 +414,29 @@ return [
         //CURD
         ['header' => 'CRUD'],
         [
+            'text'       => 'Usuarios',
+            'icon_color' => 'black',
+            'url'        => 'users',
+        ],
+        [
             'text'       => 'Vehiculo',
             'icon_color' => 'green',
             'url'        => 'vehiculos',
+        ],
+        [
+            'text'       => 'Ver pedidos',
+            'icon_color' => 'purple',
+            'url'        => 'pedidos',
+        ],
+        [
+            'text'       => 'Ver servicios',
+            'icon_color' => 'brown',
+            'url'        => 'servicios',
+        ],
+        [
+            'text'       => 'Ver precios',
+            'icon_color' => 'blue',
+            'url'        => 'precios',
         ],
     ],
 
