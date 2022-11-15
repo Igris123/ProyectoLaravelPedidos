@@ -410,6 +410,14 @@ return [
             'icon_color' => 'cyan',
             'url'        => '/clientes',
         ],
+
+        //CURD
+        ['header' => 'CRUD'],
+        [
+            'text'       => 'Vehiculo',
+            'icon_color' => 'green',
+            'url'        => 'vehiculos',
+        ],
     ],
 
     /*

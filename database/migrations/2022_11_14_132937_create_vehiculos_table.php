@@ -19,10 +19,8 @@ return new class extends Migration
             $table->string('patente')->unique()->nullable();
             $table->string('marca')->nullable();
             $table->string('modelo')->nullable();
-            $table->integer('año')->nullable();
+            $table->integer('annio')->nullable();
             $table->string('tipo')->nullable();
-            
-
             $table->timestamps();
         });
     }

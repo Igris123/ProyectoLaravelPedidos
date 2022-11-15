@@ -24,10 +24,6 @@ Route::get('/', function () {
 
 Route::get('/', [App\Http\Controllers\landingPageController::class, 'index'])->name('landingpage');
 
-
-
-
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -40,4 +36,7 @@ Route::middleware([
     Route::get('/conductores', [App\Http\Controllers\conductoresController::class, 'retornoConductores']);
     Route::get('/crearConductores', [App\Http\Controllers\crearConductorController::class, 'retornoCrearConductor'])->name('crearConductor');
     Route::get('/modificarPedido', [App\Http\Controllers\modificarPedidoController::class, 'retornoModificarPedido'])->name('modificarPedido');
+
+    //Crud
+    Route::resource('vehiculos', 'App\Http\Controllers\VehiculoController');
 });
