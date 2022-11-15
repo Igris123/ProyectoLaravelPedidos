@@ -40,10 +40,7 @@ Route::middleware([
     //Crud
     Route::resource('vehiculos', 'App\Http\Controllers\VehiculoController');
     Route::resource('pedidos', 'App\Http\Controllers\PedidoController');
-<<<<<<< HEAD
-=======
     Route::resource('servicios', 'App\Http\Controllers\ServicioController');
     Route::resource('users', 'App\Http\Controllers\UserController');
     Route::resource('precios', 'App\Http\Controllers\PrecioController');
->>>>>>> da52587aef20c18180c6c1ff554d0611882985c0
 });
