@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('tipos', function (Blueprint $table) {
             $table->engine="InnoDB";
             $table->id()->nullable();
-            $table->string('tipo')->unique();
+            $table->string('tipo')->nullable();
             $table->timestamps();
         });
     }

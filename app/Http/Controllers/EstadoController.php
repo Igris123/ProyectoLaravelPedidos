@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Estado;
 
 class EstadoController extends Controller
 {
@@ -37,15 +38,13 @@ class EstadoController extends Controller
     {
         $estados = new Estado();
         $estados->id = $request -> get('id');
-        $estados->origen = $request -> get('origen');
-        
+        $estados->estado = $request -> get('estado');
         
 
         $estados->save();
 
         return redirect('/estados');
     }
-    
 
     /**
      * Display the specified resource.
@@ -66,7 +65,7 @@ class EstadoController extends Controller
      */
     public function edit($id)
     {
-        $estado = estado::find($id);
+        $estado = Estado::find($id);
         return view('estado.edit')->with('estado', $estado);
     }
 
@@ -82,8 +81,7 @@ class EstadoController extends Controller
         $estado = Estado::find($id);
 
         $estado->id = $request -> get('id');
-        $estado->origen = $request -> get('estado');
-        
+        $estado->estado = $request -> get('estado');
         
 
         $estado->save();

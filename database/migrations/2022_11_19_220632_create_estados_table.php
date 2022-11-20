@@ -17,7 +17,7 @@ return new class extends Migration
             $table->engine="InnoDB";
             $table->id()->nullable();
             
-            $table->string('estado')->unique();
+            $table->string('estado')->nullable();
 
             $table->timestamps();
         });

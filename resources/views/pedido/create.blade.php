@@ -25,24 +25,25 @@
         @endif
     </div>
     <div class="mb-3">
-        <label for="" class="form-label">Contacto</label>
-        <input id="contacto" name="contacto" type="tel" class="form-control" tabindex="2" value="{{old('contacto')}}" autofocus>
-        @if ($errors->has('contacto'))
-            <span class="error text-danger" for="input-contacto">{{ $errors->first('contacto')}}</span>
-        @endif
-    </div>
-    <div class="mb-3">
-        <label for="" class="form-label">Peso</label>
+        <label for="" class="form-label">Peso(Kg)</label>
         <input id="peso" name="peso" type="tel" class="form-control" tabindex="2" value="{{old('peso')}}" autofocus>
         @if ($errors->has('peso'))
             <span class="error text-danger" for="input-peso">{{ $errors->first('peso')}}</span>
         @endif
     </div>
+        
     <div class="mb-3">
         <label for="" class="form-label">Descripcion</label>
         <input id="descripcion" name="descripcion" type="tel" class="form-control" tabindex="2" value="{{old('descripcion')}}" autofocus>
         @if ($errors->has('descripcion'))
             <span class="error text-danger" for="input-descripcion">{{ $errors->first('descripcion')}}</span>
+        @endif
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Contacto</label>
+        <input id="contacto" name="contacto" type="tel" class="form-control" tabindex="2" value="{{old('contacto')}}" autofocus>
+        @if ($errors->has('contacto'))
+            <span class="error text-danger" for="input-contacto">{{ $errors->first('contacto')}}</span>
         @endif
     </div>
     <div class="mb-3">

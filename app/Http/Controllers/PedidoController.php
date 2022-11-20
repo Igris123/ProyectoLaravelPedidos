@@ -36,12 +36,12 @@ class PedidoController extends Controller
      */
     public function store(Request $request)
     {
-        $pedidos = new pedido();
+        $pedidos = new Pedido();        
         $pedidos->id = $request -> get('id');
         $pedidos->destinatario = $request -> get('destinatario');
-        $pedidos->contacto = $request -> get('contacto');
         $pedidos->peso = $request -> get('peso');
         $pedidos->descripcion = $request -> get('descripcion');
+        $pedidos->contacto = $request -> get('contacto');
         $pedidos->estado = $request -> get('estado');
 
         $pedidos->save();
@@ -81,18 +81,18 @@ class PedidoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pedido = pedido::find($id);
+        $pedidos = Pedidos::find($id);
 
-        $pedido->id = $request -> get('id');
-        $pedido->destinatario = $request -> get('destinatario');
-        $pedido->contacto = $request -> get('contacto');
-        $pedido->peso = $request -> get('peso');
-        $pedido->descripcion = $request -> get('descripcion');
-        $pedido->estado = $request -> get('estado');
+        $pedidos->id = $request -> get('id');
+        $pedidos->destinatario = $request -> get('destinatario');
+        $pedidos->peso = $request -> get('peso');
+        $pedidos->descripcion = $request -> get('descripcion');
+        $pedidos->contacto = $request -> get('contacto');
+        $pedidos->estado = $request -> get('estado');
 
-        $pedido->save();
+        $pedidos->save();
 
-        return redirect('/pedidos');
+        return redirect('/pedidoss');
     }
 
     /**
