@@ -13,12 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('servicios', function (Blueprint $table) {
-            $table->engine="InnoDB"; 
-            $table->id()->nullable();
-            $table->date('fecha')->nullable();
-            $table->time('hora')->nullable();
-            $table->string('tipo_servicio')->nullable();
+        Schema::create('cotizacions', function (Blueprint $table) {
+            $table->engine="InnoDB";
+            $table->id();
+            
+            $table->bigInteger('precio_id')->unsigned()->nullable();
+            $table->foreign('precio_id')->references('id')->on('precios')->onDelete('cascade');
+            
+            
+
             $table->timestamps();
         });
     }
@@ -30,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('servicios');
+        Schema::dropIfExists('cotizacions');
     }
 };

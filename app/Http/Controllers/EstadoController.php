@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Precio;
 
-class PrecioController extends Controller
+class EstadoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,8 @@ class PrecioController extends Controller
      */
     public function index()
     {
-        $precios = Precio::all();
-        return view('precio.index')->with('precios', $precios);
+        $estados = Estado::all();
+        return view('estado.index')->with('estados', $estados);
     }
 
     /**
@@ -25,7 +24,7 @@ class PrecioController extends Controller
      */
     public function create()
     {
-        return view('precio.create');
+        return view('estado.create');
     }
 
     /**
@@ -36,17 +35,17 @@ class PrecioController extends Controller
      */
     public function store(Request $request)
     {
-        $precios = new Precio();
-        $precios->id = $request -> get('id');
-        $precios->origen = $request -> get('origen');
-        $precios->destino = $request -> get('destino');
-        $precios->precio = $request -> get('precio');
+        $estados = new Estado();
+        $estados->id = $request -> get('id');
+        $estados->origen = $request -> get('origen');
+        
         
 
-        $precios->save();
+        $estados->save();
 
-        return redirect('/precios');
+        return redirect('/estados');
     }
+    
 
     /**
      * Display the specified resource.
@@ -67,8 +66,8 @@ class PrecioController extends Controller
      */
     public function edit($id)
     {
-        $precio = Precio::find($id);
-        return view('precio.edit')->with('precio', $precio);
+        $estado = estado::find($id);
+        return view('estado.edit')->with('estado', $estado);
     }
 
     /**
@@ -80,17 +79,16 @@ class PrecioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $precio = Precio::find($id);
+        $estado = Estado::find($id);
 
-        $precio->id = $request -> get('id');
-        $precio->origen = $request -> get('origen');
-        $precio->destino = $request -> get('destino');
-        $precio->precio = $request -> get('precio');
+        $estado->id = $request -> get('id');
+        $estado->origen = $request -> get('estado');
+        
         
 
-        $precio->save();
+        $estado->save();
 
-        return redirect('/precios');
+        return redirect('/estados');
     }
 
     /**
@@ -101,8 +99,8 @@ class PrecioController extends Controller
      */
     public function destroy($id)
     {
-        $precio = Precio::find($id);
-        $precio -> delete();
-        return redirect ('/precios');
+        $estado = Estado::find($id);
+        $estado -> delete();
+        return redirect ('/estados');
     }
 }

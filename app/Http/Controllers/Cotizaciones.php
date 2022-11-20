@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Precio;
 
-class PrecioController extends Controller
+class Cotizaciones extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,7 @@ class PrecioController extends Controller
      */
     public function index()
     {
-        $precios = Precio::all();
-        return view('precio.index')->with('precios', $precios);
+        //
     }
 
     /**
@@ -25,7 +23,7 @@ class PrecioController extends Controller
      */
     public function create()
     {
-        return view('precio.create');
+        //
     }
 
     /**
@@ -36,16 +34,7 @@ class PrecioController extends Controller
      */
     public function store(Request $request)
     {
-        $precios = new Precio();
-        $precios->id = $request -> get('id');
-        $precios->origen = $request -> get('origen');
-        $precios->destino = $request -> get('destino');
-        $precios->precio = $request -> get('precio');
-        
-
-        $precios->save();
-
-        return redirect('/precios');
+        //
     }
 
     /**
@@ -67,8 +56,7 @@ class PrecioController extends Controller
      */
     public function edit($id)
     {
-        $precio = Precio::find($id);
-        return view('precio.edit')->with('precio', $precio);
+        //
     }
 
     /**
@@ -80,17 +68,7 @@ class PrecioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $precio = Precio::find($id);
-
-        $precio->id = $request -> get('id');
-        $precio->origen = $request -> get('origen');
-        $precio->destino = $request -> get('destino');
-        $precio->precio = $request -> get('precio');
-        
-
-        $precio->save();
-
-        return redirect('/precios');
+        //
     }
 
     /**
@@ -101,8 +79,6 @@ class PrecioController extends Controller
      */
     public function destroy($id)
     {
-        $precio = Precio::find($id);
-        $precio -> delete();
-        return redirect ('/precios');
+        //
     }
 }

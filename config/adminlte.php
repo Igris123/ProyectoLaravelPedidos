@@ -372,44 +372,44 @@ return [
         ],
         */
 
-        //Ver pedidos
-        ['header' => 'Pedidos'],
-        [
-            'text'       => 'Crear Pedido',
-            'icon_color' => 'red',
-            'url'        => '/crearPedido',
-        ],
-        [
-            'text'       => 'Modificar Pedido',
-            'icon_color' => 'red',
-            'url'        => '/modificarPedido',
-        ],
-        [
-            'text'       => 'Ver Pedidos',
-            'icon_color' => 'red',
-            'url'        => '/pedidos',
-        ],
+        // //Ver pedidos
+        // ['header' => 'Pedidos'],
+        // [
+        //     'text'       => 'Crear Pedido',
+        //     'icon_color' => 'red',
+        //     'url'        => '/crearPedido',
+        // ],
+        // [
+        //     'text'       => 'Modificar Pedido',
+        //     'icon_color' => 'red',
+        //     'url'        => '/modificarPedido',
+        // ],
+        // [
+        //     'text'       => 'Ver Pedidos',
+        //     'icon_color' => 'red',
+        //     'url'        => '/pedidos',
+        // ],
         
-        //Ver Conductores
-        ['header' => 'labels'],
-        [
-            'text'       => 'Crear conductor',
-            'icon_color' => 'yellow',
-            'url'        => '/crearConductores',
-        ],
-        [
-            'text'       => 'Ver conductores',
-            'icon_color' => 'yellow',
-            'url'        => '/conductores',
-        ],
+        // //Ver Conductores
+        // ['header' => 'labels'],
+        // [
+        //     'text'       => 'Crear conductor',
+        //     'icon_color' => 'yellow',
+        //     'url'        => '/crearConductores',
+        // ],
+        // [
+        //     'text'       => 'Ver conductores',
+        //     'icon_color' => 'yellow',
+        //     'url'        => '/conductores',
+        // ],
 
-        //Ver clientes
-        ['header' => 'Clientes'],
-        [
-            'text'       => 'Ver clientes',
-            'icon_color' => 'cyan',
-            'url'        => '/clientes',
-        ],
+        // //Ver clientes
+        // ['header' => 'Clientes'],
+        // [
+        //     'text'       => 'Ver clientes',
+        //     'icon_color' => 'cyan',
+        //     'url'        => '/clientes',
+        // ],
 
         //CRUD
         ['header' => 'CRUD'],
@@ -437,6 +437,21 @@ return [
             'text'       => 'Ver precios',
             'icon_color' => 'blue',
             'url'        => 'precios',
+        ],
+        [
+            'text'       => 'Tipos de servicio',
+            'icon_color' => 'yellow',
+            'url'        => 'tipos',
+        ],
+        [
+            'text'       => 'Estados Pedido',
+            'icon_color' => 'red',
+            'url'        => 'estados',
+        ],
+        [
+            'text'       => 'Cotizaciones',
+            'icon_color' => 'lime',
+            'url'        => 'cotizaciones',
         ],
     ],
 

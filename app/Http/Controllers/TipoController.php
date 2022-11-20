@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Precio;
 
-class PrecioController extends Controller
+class TipoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,8 @@ class PrecioController extends Controller
      */
     public function index()
     {
-        $precios = Precio::all();
-        return view('precio.index')->with('precios', $precios);
+        $tipos = Tipo::all();
+        return view('tipo.index')->with('tipos', $tipos);
     }
 
     /**
@@ -25,7 +24,7 @@ class PrecioController extends Controller
      */
     public function create()
     {
-        return view('precio.create');
+        return view('tipo.create');
     }
 
     /**
@@ -36,16 +35,14 @@ class PrecioController extends Controller
      */
     public function store(Request $request)
     {
-        $precios = new Precio();
-        $precios->id = $request -> get('id');
-        $precios->origen = $request -> get('origen');
-        $precios->destino = $request -> get('destino');
-        $precios->precio = $request -> get('precio');
+        $tipos = new Tipo();
+        $tipos->id = $request -> get('id');
+        $tipos->patente = $request -> get('tipo');
         
 
-        $precios->save();
+        $tipos->save();
 
-        return redirect('/precios');
+        return redirect('/tipos');
     }
 
     /**
@@ -67,8 +64,8 @@ class PrecioController extends Controller
      */
     public function edit($id)
     {
-        $precio = Precio::find($id);
-        return view('precio.edit')->with('precio', $precio);
+        $tipo = Tipo::find($id);
+        return view('tipo.edit')->with('tipo', $tipo);
     }
 
     /**
@@ -80,17 +77,14 @@ class PrecioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $precio = Precio::find($id);
+        $tipo = Tipo::find($id);
 
-        $precio->id = $request -> get('id');
-        $precio->origen = $request -> get('origen');
-        $precio->destino = $request -> get('destino');
-        $precio->precio = $request -> get('precio');
-        
+        $tipo->id = $request -> get('id');
+        $tipo->tipo = $request -> get('tipo');
 
-        $precio->save();
+        $tipo->save();
 
-        return redirect('/precios');
+        return redirect('/tipos');
     }
 
     /**
@@ -101,8 +95,8 @@ class PrecioController extends Controller
      */
     public function destroy($id)
     {
-        $precio = Precio::find($id);
-        $precio -> delete();
-        return redirect ('/precios');
+        $tipo = Tipo::find($id);
+        $tipo -> delete();
+        return redirect ('/tipos');
     }
 }

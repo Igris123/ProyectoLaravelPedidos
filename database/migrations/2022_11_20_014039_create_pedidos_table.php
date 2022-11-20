@@ -16,21 +16,26 @@ return new class extends Migration
         Schema::create('pedidos', function (Blueprint $table) {
             $table->engine="InnoDB"; 
             $table->id();
-            $table->string('destinatario')->nullable();
-            $table->string('estado')->nullable();
+            $table->string('destinatario')->nullable();            
             $table->Integer('peso')->nullable();
             $table->string('descripcion')->nullable();
             $table->string('contacto')->nullable();
+
             $table->bigInteger('vehiculo_id')->unsigned()->nullable();
             $table->foreign('vehiculo_id')->references('id')->on('vehiculos')->onDelete('cascade');
+
             $table->bigInteger('servicios_id')->unsigned()->nullable();
             $table->foreign('servicios_id')->references('id')->on('servicios')->onDelete('cascade');
+
             $table->bigInteger('precios_id')->unsigned()->nullable();
             $table->foreign('precios_id')->references('id')->on('precios')->onDelete('cascade');
+
             $table->bigInteger('cliente_id')->unsigned()->nullable();
             $table->foreign('cliente_id')->references('id')->on('users')->onDelete('cascade');
 
-            $table->timestamps();
+            $table->bigInteger('estado_id')->unsigned()->nullable();
+            $table->foreign('estado_id')->references('id')->on('estados')->onDelete('cascade');
+            
         });
     }
 

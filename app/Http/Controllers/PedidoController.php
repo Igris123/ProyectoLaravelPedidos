@@ -25,7 +25,7 @@ class PedidoController extends Controller
      */
     public function create()
     {
-        //
+        return view('pedido.create');
     }
 
     /**
@@ -36,7 +36,17 @@ class PedidoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $pedidos = new pedido();
+        $pedidos->id = $request -> get('id');
+        $pedidos->destinatario = $request -> get('destinatario');
+        $pedidos->contacto = $request -> get('contacto');
+        $pedidos->peso = $request -> get('peso');
+        $pedidos->descripcion = $request -> get('descripcion');
+        $pedidos->estado = $request -> get('estado');
+
+        $pedidos->save();
+
+        return redirect('/pedidos');
     }
 
     /**
@@ -58,7 +68,8 @@ class PedidoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pedido = Pedido::find($id);
+        return view('pedido.edit')->with('pedido', $pedido);
     }
 
     /**
@@ -70,7 +81,18 @@ class PedidoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $pedido = pedido::find($id);
+
+        $pedido->id = $request -> get('id');
+        $pedido->destinatario = $request -> get('destinatario');
+        $pedido->contacto = $request -> get('contacto');
+        $pedido->peso = $request -> get('peso');
+        $pedido->descripcion = $request -> get('descripcion');
+        $pedido->estado = $request -> get('estado');
+
+        $pedido->save();
+
+        return redirect('/pedidos');
     }
 
     /**
@@ -81,6 +103,10 @@ class PedidoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pedido = Pedido::find($id);
+        $pedido -> delete();
+        return redirect ('/pedidos');
     }
 }
+
+

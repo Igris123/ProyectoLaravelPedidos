@@ -37,10 +37,13 @@ Route::middleware([
     Route::get('/crearConductores', [App\Http\Controllers\crearConductorController::class, 'retornoCrearConductor'])->name('crearConductor');
     Route::get('/modificarPedido', [App\Http\Controllers\modificarPedidoController::class, 'retornoModificarPedido'])->name('modificarPedido');
 
-    //Crud
+    // C R U D //
     Route::resource('vehiculos', 'App\Http\Controllers\VehiculoController');
     Route::resource('pedidos', 'App\Http\Controllers\PedidoController');
     Route::resource('servicios', 'App\Http\Controllers\ServicioController');
     Route::resource('users', 'App\Http\Controllers\UserController');
     Route::resource('precios', 'App\Http\Controllers\PrecioController');
+    Route::resource('tipos', 'App\Http\Controllers\TipoController');
+    Route::resource('estados', 'App\Http\Controllers\EstadoController');
+    Route::resource('cotizacions', 'App\Http\Controllers\CotizacionController');
 });
