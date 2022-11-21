@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Mail\PedidoFaadExpress;
+use Illuminate\Support\Facades\Mail;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -46,4 +48,12 @@ Route::middleware([
     Route::resource('tipos', 'App\Http\Controllers\TipoController');
     Route::resource('estados', 'App\Http\Controllers\EstadoController');
     Route::resource('cotizacions', 'App\Http\Controllers\CotizacionController');
+});
+
+Route::get('envio', function(){
+    $correo = new PedidoFaadExpress;
+
+    Mail::to('juanpablog2.0@gmail.com')->send($correo);
+
+    return "Mensaje enviado";
 });

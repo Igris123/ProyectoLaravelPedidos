@@ -81,7 +81,7 @@ class PedidoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pedidos = Pedidos::find($id);
+        $pedidos = Pedido::find($id);
 
         $pedidos->id = $request -> get('id');
         $pedidos->destinatario = $request -> get('destinatario');
@@ -92,7 +92,7 @@ class PedidoController extends Controller
 
         $pedidos->save();
 
-        return redirect('/pedidoss');
+        return redirect('/pedidos');
     }
 
     /**

@@ -22,20 +22,20 @@ return new class extends Migration
             $table->string('contacto')->nullable();
             $table->string('estado')->nullable();
 
-            // $table->bigInteger('vehiculo_id')->unsigned()->nullable();
-            // $table->foreign('vehiculo_id')->references('id')->on('vehiculos')->onDelete('cascade');
+            $table->bigInteger('vehiculo_id')->unsigned()->nullable();
+            $table->foreign('vehiculo_id')->references('id')->on('vehiculos')->onDelete('cascade');
 
-            // $table->bigInteger('servicios_id')->unsigned()->nullable();
-            // $table->foreign('servicios_id')->references('id')->on('servicios')->onDelete('cascade');
+            $table->bigInteger('servicios_id')->unsigned()->nullable();
+            $table->foreign('servicios_id')->references('id')->on('servicios')->onDelete('cascade');
 
-            // $table->bigInteger('precios_id')->unsigned()->nullable();
-            // $table->foreign('precios_id')->references('id')->on('precios')->onDelete('cascade');
+            $table->bigInteger('precios_id')->unsigned()->nullable();
+            $table->foreign('precios_id')->references('id')->on('precios')->onDelete('cascade');
 
-            // $table->bigInteger('cliente_id')->unsigned()->nullable();
-            // $table->foreign('cliente_id')->references('id')->on('users')->onDelete('cascade');
+            $table->bigInteger('cliente_id')->unsigned()->nullable();
+            $table->foreign('cliente_id')->references('id')->on('users')->onDelete('cascade');
 
-            // $table->bigInteger('estado_id')->unsigned()->nullable();
-            // $table->foreign('estado_id')->references('id')->on('estados')->onDelete('cascade');
+            $table->bigInteger('estado_id')->unsigned()->nullable();
+            $table->foreign('estado_id')->references('id')->on('estados')->onDelete('cascade');
 
             $table->timestamps();
             
