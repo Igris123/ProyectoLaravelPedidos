@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Pedido;
 
+use Illuminate\Support\Facades\Mail;
+use App\Mail\PedidoFaadExpress;
+
 class PedidoController extends Controller
 {
     /**
@@ -45,6 +48,9 @@ class PedidoController extends Controller
         $pedidos->estado = $request -> get('estado');
 
         $pedidos->save();
+
+        Mail::to('juanpablog2.0@gmail.com')
+        ->send(new PedidoFaadExpress($request));
 
         return redirect('/pedidos');
     }

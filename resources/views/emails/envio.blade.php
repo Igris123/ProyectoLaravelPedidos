@@ -7,6 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Envio de Faad Express</h1>
+    <h1>Informacion del Pedido</h1>
+    <ul>
+        <li>{{ $info->id}}</li>
+        <li>{{ $info->destinatario}}</li>
+        <li>{{ $info->peso}}</li>
+        <li>{{ $info->descripcion}}</li>
+        <li>{{ $info->contacto}}</li>
+        <li>{{ $info->estado}}</li>
+
+    </ul>
 </body>
 </html>

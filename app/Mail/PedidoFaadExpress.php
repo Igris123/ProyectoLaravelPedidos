@@ -9,20 +9,24 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
+use App\Http\Controllers\crearPedidoController;
+
 class PedidoFaadExpress extends Mailable
 {
     use Queueable, SerializesModels;
 
     public $subject = "Nuevo Pedido en camino";
 
+    public $info;
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($data)
     {
-        //
+        $this->info = $data;
     }
 
     /**
