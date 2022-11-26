@@ -424,7 +424,7 @@ return [
             'url'        => 'vehiculos',
         ],
         [
-            'text'       => 'Ver pedidos',
+            'text'       => 'Realizar encargo',
             'icon_color' => 'purple',
             'url'        => 'pedidos',
         ],

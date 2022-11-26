@@ -11,6 +11,23 @@
 body {
 	background: #f1fbff;
 }
+
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
 .section-padding {
 	padding: 100px 0;
 }
@@ -97,13 +114,13 @@ body {
 
 footer {
 	background: #101010;
-	padding: 86px 0;
+    padding: 50px 0;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
 	
 	
-	
-
-    
-
 }
 .single-content {
 	text-align: center;

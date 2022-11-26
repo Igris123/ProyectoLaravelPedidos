@@ -29,7 +29,7 @@
                 <a class="nav-link" href="#cotizador">Cotizador</a>
               </li> 
               <li class="nav-item">
-                <a class="nav-link" href="#seguimiento">Seguimiento</a>
+                <a class="nav-link" href="/seguimiento">Seguimiento</a>
               </li> 
               <li class="nav-item">
                 <a class="nav-link" href="#servicios">Servicios</a>
@@ -48,9 +48,9 @@
         </div>
       </nav>
          
+         {{-- CARRUSEL --}}
          
-         
-         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -92,6 +92,7 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
+      {{-- CARRUSEl --}}
 
       <!-- COTIZADOR -->
       <section id="cotizador" class="cotizador section-padding">
@@ -134,7 +135,7 @@
                           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, labore reiciendis. Assumenda eos quod animi! Soluta nesciunt inventore dolores excepturi provident, culpa beatae tempora, explicabo corporis quibusdam corrupti. Autem, quaerat. Assumenda quo aliquam vel, nostrum explicabo ipsum dolor, ipsa perferendis porro doloribus obcaecati placeat natus iste odio est non earum?</p>
                           <br>
                           
-                          <a href="#" class="btn btn-warning col-md-12 text-center">Consulta aqui</a>
+                          <a href="/seguimiento" class="btn btn-warning col-md-12 text-center">Consulta aqui</a>
                     </div>
                 </div>
             </div>
@@ -195,7 +196,8 @@
 
 
      
-      <body>
+     
+      
           
         
         <footer class="bg-dark p-2 text-center">

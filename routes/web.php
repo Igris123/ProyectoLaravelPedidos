@@ -4,7 +4,18 @@ use Illuminate\Support\Facades\Route;
 
 use App\Mail\PedidoFaadExpress;
 use Illuminate\Support\Facades\Mail;
+
+/*Route::get('/welcome', function () {
+    return view('welcome');
+});
+
+Route::get('/', function () {
+    return view('landingpage');
+});
+    I WAS HERE 25/11/2022 21:46:50 a. m. 
 /*
+
+
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -15,16 +26,11 @@ use Illuminate\Support\Facades\Mail;
 |
 */
 
-/*
-Route::get('/welcome', function () {
-    return view('welcome');
-});
 
-Route::get('/', function () {
-    return view('landingpage');
-});*/
 
+//rutas SIN LOGIN
 Route::get('/', [App\Http\Controllers\landingPageController::class, 'index'])->name('landingpage');
+Route::get('/seguimiento', [App\Http\Controllers\seguimientoController::class, 'retornoSeguimiento'])->name('seguimiento');
 
 Route::middleware([
     'auth:sanctum',
@@ -48,12 +54,16 @@ Route::middleware([
     Route::resource('tipos', 'App\Http\Controllers\TipoController');
     Route::resource('estados', 'App\Http\Controllers\EstadoController');
     Route::resource('cotizacions', 'App\Http\Controllers\CotizacionController');
+
 });
+
+    
 
 Route::get('envio', function(){
     $correo = new PedidoFaadExpress;
 
-    Mail::to('juanpablog2.0@gmail.com')->send($correo);
+    //email del cliente
+    Mail::to("aguasann@gmail.com")->send($correo); //a quien se lo queremos enviar
 
     return "Mensaje enviado";
 });

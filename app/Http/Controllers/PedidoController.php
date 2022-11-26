@@ -49,8 +49,9 @@ class PedidoController extends Controller
 
         $pedidos->save();
 
-        Mail::to('juanpablog2.0@gmail.com')
-        ->send(new PedidoFaadExpress($request));
+        Mail::to($request->user())
+        ->send(new PedidoFaadExpress($pedidos));
+        
 
         return redirect('/pedidos');
     }
