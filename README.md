@@ -1,31 +1,61 @@
-# Proyecto Pedidos Faad Express
+<br />
+<div align="center">
+  <a href="https://github.com/Igris123/ProyectoLaravelPedidos">
+    <img src="public/img/AdminLTELogo.png" alt="Logo" width="150" height"150">
+  </a>
+</div>
+
+
+<h3 align="center">Proyecto Pedidos Faad Express</h3>
+
 
 ### Installation
 * Clonar repositorio
 * Configurar .env (modificar DB)
-* Composer:
-`composer install`\
-`composer require laravel/scout`\
+* Composer:  
+```sh
+composer install
+```
+
+```sh
+composer install
+```
+```sh
+composer require laravel/scout
+```
+```sh
+php artisan vendor:publish --provider="Laravel\Scout\ScoutServiceProvider
+```
+```sh
+php artisan key:generate
+```
+```sh
+php artisan migrate
+```
 
 
-`php artisan vendor:publish --provider="Laravel\Scout\ScoutServiceProvider`\
-`php artisan key:generate`\
-`php artisan migrate`\
+* npm:  
+```sh
+npm install
+```
+```sh
+npm run build
+```
 
-* npm:
-`npm install`\
-`npm run build`\
+* Migracion BD  
+```sh
+php artisan migrate
+```
 
-* Migracion BD
-`php artisan migrate`\
-
-* Run
-`php artisan serve`\
+* Run  
+```sh
+php artisan serve
+```
 
 ### Env:
-Configurar BD
-Configurar el mailtrap
-Configurar ScoutDriver
+* Configurar BD
+* Configurar el mailtrap
+* Configurar ScoutDriver
 
 
 
