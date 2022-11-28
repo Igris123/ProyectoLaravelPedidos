@@ -77,20 +77,13 @@
     
         {{-- BUSQUEDA --}}
         
-        <div class="container">
-            <div class="d-flex align-items-center justify-content-center flex-column gap-4">
-                <form class="d-flex">
-                  <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search">
-                  
-                  <a href="/" class="btn btn-warning">Buscar</a>
-                  
-                  
-                </form>
+        <div class="input-group">
+          <input type="search" class="form-control rounded text-center" placeholder="Ingresa tu código de seguimiento" aria-label="Search" aria-describedby="search-addon" />
+          <button type="button" class="btn btn-warning">Buscar</button>
         </div>
+        {{-- <a href="/" class="btn btn-warning">Buscar</a> --}}
 
         
-
-       
        
         {{-- FIN BUSQUEDA --}}
         

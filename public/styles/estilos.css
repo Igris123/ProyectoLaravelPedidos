@@ -17,6 +17,8 @@ body {
     padding-left: 2.375rem;
 }
 
+
+
 .has-search .form-control-feedback {
     position: absolute;
     z-index: 2;

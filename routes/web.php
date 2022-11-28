@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Mail\PedidoFaadExpress;
 use Illuminate\Support\Facades\Mail;
+use App\Models\Pedido;
 
 /*Route::get('/welcome', function () {
     return view('welcome');
@@ -26,10 +27,20 @@ Route::get('/', function () {
 |
 */
 
+// Busqueda
+Route::get('/', function () {
+    $search = "peter";
 
+    $pedidos = Pedido::search($search)->get(); // Search for the term in the database 
+    //$pedidos = Pedido::where('destinatario', 'like', '%' . $search . '%')->get(); // Search for the term in the database
+    
+    return $pedidos;
+
+    return view('/');
+});
 
 //rutas SIN LOGIN
-Route::get('/', [App\Http\Controllers\landingPageController::class, 'index'])->name('landingpage');
+// Route::get('/', [App\Http\Controllers\landingPageController::class, 'index'])->name('landingpage');
 Route::get('/seguimiento', [App\Http\Controllers\seguimientoController::class, 'retornoSeguimiento'])->name('seguimiento');
 
 Route::middleware([
