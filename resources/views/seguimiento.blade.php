@@ -15,6 +15,24 @@
     {{-- CSS --}}
     <link href="\styles\estilos.css" rel="stylesheet">
     
+
+    <script>
+      function validateForm(){
+        var x = document.forms["myForm"]["searchText"].value;
+        if(x == "" || x.length < 3){
+          alert("Debe ingresar un código de seguimiento");
+          return false;
+        }
+      }
+    </script>
+      {{-- CSS --}}
+    <script>
+      
+      
+    </script>
+
+
+
 </head>
 
 
@@ -32,7 +50,7 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Inicio</a>
+                    <a class="nav-link" href="/">Inicio</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#cotizador">Cotizador</a>
@@ -66,22 +84,62 @@
                 <p class="text-center">Ingrese el numero de guia para ver el estado de su envio</p>
             </div>
      
-            
-     
         </div>
-    <div class="row">
-
-        <p><br><br>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni voluptatibus quia velit sed necessitatibus eveniet itaque repellendus, magnam harum aliquam perferendis, quam unde, sunt eos fuga ab quisquam recusandae? Mollitia.<br><br><br></p>
-    </div>
+        <br>
+        <br>  
 
     
         {{-- BUSQUEDA --}}
         
-        <div class="input-group">
+
+        {{-- <div class="input-group">
           <input type="search" class="form-control rounded text-center" placeholder="Ingresa tu código de seguimiento" aria-label="Search" aria-describedby="search-addon" />
           <button type="button" class="btn btn-warning">Buscar</button>
-        </div>
+        </div> --}}
+
         {{-- <a href="/" class="btn btn-warning">Buscar</a> --}}
+
+
+        {{-- FIN BUSQUEDA --}}
+        
+     
+        
+        <form action="/seguimiento/search" method="POST" name="myForm" onsubmit="return validateForm()">
+          @csrf
+          
+          <label> Ingresa tu código de seguimiento: </label>
+          <input type = "text" name="searchText"/>
+          <input type = "submit" value="Buscar" required/>
+        </form>
+
+       
+        <br>
+        <br>
+               
+        <div class ="container ">
+        @isset($pedidos)
+          <ul>
+              @forelse ($pedidos as $pedido)
+              <div class="card">
+                <p allign="left"><b>Destinatario: </b>{{$pedido->destinatario}}</p>
+                <p allign="left"><b>Estado del pedido: </b>{{$pedido->estado}}</p>
+                <p allign="left"><b>Descripción: </b>{{$pedido->descripcion}}</p>
+                <p allign="left"><b>Contacto: </b>{{$pedido->contacto}}</p>
+                <p allign="left"><b>Recibido:</b> {{$pedido->created_at}}</p>
+                      
+        
+
+              </div>
+              @empty
+                  <p>Pedido no encontrado</p>
+              @endforelse
+          </ul>
+        @endisset
+
+        </div>
+
+        
+
 
         
        
@@ -90,7 +148,7 @@
         {{-- BARRA PROGESO --}}
        
         {{-- <div class="progress">
-            <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 99%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
         </div> --}}
         {{-- FIN BARRA PROGRESO --}}
 
@@ -99,21 +157,36 @@
         {{-- FIN TABLA --}}
 
         {{-- BOTON --}}
-        
-        
-    <div class="container p-3">
+
+        <br>
+        <br>
+       
+    <div class="container">
+    <div class="input-group justify-content-center m-3">
+    
         <div class="row">
             <div class="col-md-12">
                 <a href="/" class="btn btn-warning">Volver</a>
             </div>
         </div>
+    
+   
+      <div class="row">
+          <div class="col-md-12">
+              <a href="/seguimiento" class="btn btn-warning">Limpiar</a>
+          </div>
+      </div>
+  
     </div>
-        
+        {{-- FIN BOTON --}}
        
         {{-- FIN BOTON --}}
       
       
     </div>
+    </div>
+
+
 </section>
 
 {{-- FOOTER --}}

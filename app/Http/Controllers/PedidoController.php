@@ -10,6 +10,8 @@ use App\Mail\PedidoFaadExpress;
 
 class PedidoController extends Controller
 {
+
+  
     /**
      * Display a listing of the resource.
      *
@@ -114,6 +116,10 @@ class PedidoController extends Controller
         $pedido -> delete();
         return redirect ('/pedidos');
     }
+
+
+    
+
 }
 
 

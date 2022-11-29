@@ -26,8 +26,8 @@ Route::get('/', function () {
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-// Busqueda
+/*
+Busqueda
 Route::get('/', function () {
     $search = "peter";
 
@@ -37,12 +37,14 @@ Route::get('/', function () {
     return $pedidos;
 
     return view('/');
-});
+});*/
 
 //rutas SIN LOGIN
-// Route::get('/', [App\Http\Controllers\landingPageController::class, 'index'])->name('landingpage');
+Route::get('/', [App\Http\Controllers\landingPageController::class, 'index'])->name('landingpage'); //landing page
 Route::get('/seguimiento', [App\Http\Controllers\seguimientoController::class, 'retornoSeguimiento'])->name('seguimiento');
+Route::post('/seguimiento/search', [App\Http\Controllers\seguimientoController::class, 'search']);
 
+//rutas CON LOGIN
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

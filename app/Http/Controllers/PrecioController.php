@@ -7,6 +7,9 @@ use App\Models\Precio;
 
 class PrecioController extends Controller
 {
+
+
+
     /**
      * Display a listing of the resource.
      *

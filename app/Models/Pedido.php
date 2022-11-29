@@ -21,7 +21,7 @@ class Pedido extends Model
      */
     public function toSearchableArray()
     {
-       
+       //tablas a buscar xd
         return [
             'destinatario' => $this->destinatario,
 

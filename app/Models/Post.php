@@ -11,3 +11,6 @@ class Post extends Model
     use HasFactory;
     use Searchable;
 }
+
+
+//post test
