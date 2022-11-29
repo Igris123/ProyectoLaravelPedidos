@@ -438,21 +438,27 @@ return [
             'icon_color' => 'blue',
             'url'        => 'precios',
         ],
+        /*
         [
             'text'       => 'Tipos de servicio',
             'icon_color' => 'yellow',
             'url'        => 'tipos',
         ],
+        */
+        /*
         [
             'text'       => 'Estados Pedido',
             'icon_color' => 'red',
             'url'        => 'estados',
         ],
+        */
+        /*
         [
             'text'       => 'Cotizaciones',
             'icon_color' => 'lime',
             'url'        => 'cotizaciones',
         ],
+        */
     ],
 
     /*

@@ -34,9 +34,6 @@ return new class extends Migration
             $table->bigInteger('cliente_id')->unsigned()->nullable();
             $table->foreign('cliente_id')->references('id')->on('users')->onDelete('cascade');
 
-            $table->bigInteger('estado_id')->unsigned()->nullable();
-            $table->foreign('estado_id')->references('id')->on('estados')->onDelete('cascade');
-
             $table->timestamps();
             
         });
