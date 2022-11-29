@@ -24,12 +24,15 @@
           return false;
         }
       }
+   
+  
     </script>
-      {{-- CSS --}}
+
     <script>
-      
-      
+   
+
     </script>
+
 
 
 
@@ -109,7 +112,7 @@
           
           <label> Ingresa tu código de seguimiento: </label>
           <input type = "text" name="searchText"/>
-          <input type = "submit" value="Buscar" required/>
+          <input type = "submit" value="Buscar" onclick="barra()" required />
         </form>
 
        
@@ -126,9 +129,28 @@
                 <p allign="left"><b>Descripción: </b>{{$pedido->descripcion}}</p>
                 <p allign="left"><b>Contacto: </b>{{$pedido->contacto}}</p>
                 <p allign="left"><b>Recibido:</b> {{$pedido->created_at}}</p>
-                      
-        
 
+                
+                    
+                <?php if($pedido->estado == "Pre-admision"):?>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 25%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                </div> 
+                <?php elseif($pedido->estado == "En Camino"):?>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 50%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                </div> 
+                <?php elseif($pedido->estado == "En entrega"):?>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <?php elseif($pedido->estado == "Entregado"):?>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 100%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <?php endif ?>
+
+                 
               </div>
               @empty
                   <p>Pedido no encontrado</p>
