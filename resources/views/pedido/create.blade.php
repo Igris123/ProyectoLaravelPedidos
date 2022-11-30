@@ -48,22 +48,9 @@
     </div>
     <div class="mb-3">
         <label for="" class="form-label">Estado</label>
-            <div class="form-group position-relative mb-3" >
-                <select name="estado" id="estado" class="form-select">
-                        <option value="Pre-admision">Pre-admision</option>
-                        <option value="En Camino">En Camino</option>
-                        <option value="En entrega">En entrega</option>
-                        <option value="Entregado">Entregado</option>
-                </select>
-                <div class="form-control-icon"> 
-                    <i class="bi bi-exclude"></i>
-                </div>
-            </div>
-        <!--
-        <input id="estado" name="estado" type="tel" class="form-control" tabindex="2" value="{{old('estado')}}" autofocus>
-        -->
-        @if ($errors->has('estado'))
-            <span class="error text-danger" for="input-estado">{{ $errors->first('estado')}}</span>
+        <input id="estado" name="estado" type="tel" class="form-control" tabindex="2" value="Ingresado" readonly autofocus>
+        @if ($errors->has('contacto'))
+            <span class="error text-danger" for="input-contacto">{{ $errors->first('estado')}}</span>
         @endif
     </div>
     <a href="/pedidos" class="btn btn-secondary" tabindex="5">Cancelar</a>

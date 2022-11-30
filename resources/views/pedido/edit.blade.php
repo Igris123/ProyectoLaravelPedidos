@@ -50,9 +50,9 @@
         <label for="" class="form-label">Estado</label>
         <div class="form-group position-relative mb-3" >
             <select name="estado" id="estado" class="form-select">
-                    <option value="Pre-admision">Pre-admision</option>
-                    <option value="En Camino">En Camino</option>
-                    <option value="En entrega">En entrega</option>
+                    <option value="Ingresado">Ingresado</option>
+                    <option value="Recibido">Recibido</option>
+                    <option value="En reparto">En reparto</option>
                     <option value="Entregado">Entregado</option>
             </select>
             <div class="form-control-icon"> 

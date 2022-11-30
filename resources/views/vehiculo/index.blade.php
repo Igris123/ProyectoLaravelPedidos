@@ -33,7 +33,9 @@
                 
                 <td>
                     <form action="{{route ('vehiculos.destroy', $vehiculo->id)}}" method="POST">
+                    
                     <a class="btn btn-info" href="/vehiculos/{{ $vehiculo->id}}/edit">Editar</a>
+                   
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger">Eliminar</button>

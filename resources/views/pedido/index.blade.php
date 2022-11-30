@@ -28,11 +28,13 @@
                 <td>{{ $pedido->destinatario}}</td>
                 <td>{{ $pedido->contacto}}</td>
                 <td>{{ $pedido->peso}}</td>
-                <td>{{ $pedido->estado}}</td>
-                <!--
                 <td>{{ $pedido->descripcion}}</td>
-                -->
                 <td>{{ $pedido->estado}}</td>
+                {{-- <td>{{ $pedido->estado}}</td> --}}
+                
+                
+                
+
                 
                 <td>
                     <form action="{{route ('pedidos.destroy', $pedido->id)}}" method="POST">

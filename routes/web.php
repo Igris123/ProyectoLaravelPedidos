@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Mail\PedidoFaadExpress;
 use Illuminate\Support\Facades\Mail;
 use App\Models\Pedido;
+use App\Http\Controllers\UserController;
 
 /*Route::get('/welcome', function () {
     return view('welcome');
@@ -26,23 +27,12 @@ Route::get('/', function () {
 | contains the "web" middleware group. Now create something great!
 |
 */
-/*
-Busqueda
-Route::get('/', function () {
-    $search = "peter";
-
-    $pedidos = Pedido::search($search)->get(); // Search for the term in the database 
-    //$pedidos = Pedido::where('destinatario', 'like', '%' . $search . '%')->get(); // Search for the term in the database
-    
-    return $pedidos;
-
-    return view('/');
-});*/
-
 //rutas SIN LOGIN
 Route::get('/', [App\Http\Controllers\landingPageController::class, 'index'])->name('landingpage'); //landing page
 Route::get('/seguimiento', [App\Http\Controllers\seguimientoController::class, 'retornoSeguimiento'])->name('seguimiento');
 Route::post('/seguimiento/search', [App\Http\Controllers\seguimientoController::class, 'search']);
+
+
 
 //rutas CON LOGIN
 Route::middleware([
@@ -50,13 +40,8 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/dash', [App\Http\Controllers\DashController::class, 'index'])->name('dashboard');
-    Route::get('/pedidos', [App\Http\Controllers\pedidosController::class, 'retornoPedido'])->name('pedidos');
-    Route::get('/crearPedido', [App\Http\Controllers\crearPedidoController::class, 'retornoCrearPedido'])->name('crearPedido');
-    Route::get('/clientes', [App\Http\Controllers\clientesController::class, 'retornoClientes']);
-    Route::get('/conductores', [App\Http\Controllers\conductoresController::class, 'retornoConductores']);
-    Route::get('/crearConductores', [App\Http\Controllers\crearConductorController::class, 'retornoCrearConductor'])->name('crearConductor');
-    Route::get('/modificarPedido', [App\Http\Controllers\modificarPedidoController::class, 'retornoModificarPedido'])->name('modificarPedido');
+    Route::get('/dash', [App\Http\Controllers\DashController::class, 'index'])->name('dash');
+    
 
     // C R U D //
     Route::resource('vehiculos', 'App\Http\Controllers\VehiculoController');
@@ -64,19 +49,25 @@ Route::middleware([
     Route::resource('servicios', 'App\Http\Controllers\ServicioController');
     Route::resource('users', 'App\Http\Controllers\UserController');
     Route::resource('precios', 'App\Http\Controllers\PrecioController');
-    Route::resource('tipos', 'App\Http\Controllers\TipoController');
-    Route::resource('estados', 'App\Http\Controllers\EstadoController');
-    Route::resource('cotizacions', 'App\Http\Controllers\CotizacionController');
+    Route::resource('cotizacions', 'App\Http\Controllers\CotizacionController'); //HACER
 
+
+
+    // Route::get('/pedidos', [App\Http\Controllers\pedidosController::class, 'retornoPedido'])->name('pedidos');
+    // Route::get('/crearPedido', [App\Http\Controllers\crearPedidoController::class, 'retornoCrearPedido'])->name('crearPedido');
+    // Route::get('/clientes', [App\Http\Controllers\clientesController::class, 'retornoClientes'])->name('clientes');
+    // Route::get('/conductores', [App\Http\Controllers\conductoresController::class, 'retornoConductores'])->name('conductores');
+    // Route::get('/crearConductores', [App\Http\Controllers\crearConductorController::class, 'retornoCrearConductor'])->name('crearConductor');
+    // Route::get('/modificarPedido', [App\Http\Controllers\modificarPedidoController::class, 'retornoModificarPedido'])->name('modificarPedido');
 });
 
     
 
-Route::get('envio', function(){
-    $correo = new PedidoFaadExpress;
+// Route::get('envio', function(){
+//     $correo = new PedidoFaadExpress;
 
-    //email del cliente
-    Mail::to("aguasann@gmail.com")->send($correo); //a quien se lo queremos enviar
+//     //email del cliente
+//     Mail::to("aguasann@gmail.com")->send($correo); //a quien se lo queremos enviar
 
-    return "Mensaje enviado";
-});
+//     return "Mensaje enviado";
+// });

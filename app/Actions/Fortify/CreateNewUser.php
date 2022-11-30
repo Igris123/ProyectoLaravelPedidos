@@ -41,6 +41,6 @@ class CreateNewUser implements CreatesNewUsers
             'direccion' => $input['direccion'],
             
 
-        ]);
+        ])->assignRole('user');
     }
 }
