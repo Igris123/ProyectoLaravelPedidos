@@ -16,15 +16,8 @@
 ```sh
 composer install
 ```
-
-```sh
-composer install
-```
 ```sh
 composer require laravel/scout
-```
-```sh
-php artisan vendor:publish --provider="Laravel\Scout\ScoutServiceProvider
 ```
 ```sh
 php artisan key:generate
@@ -32,7 +25,12 @@ php artisan key:generate
 ```sh
 php artisan migrate
 ```
-
+```sh
+php artisan make:auth
+```
+```sh
+composer require spatie/laravel-permission
+```
 
 * npm:  
 ```sh
