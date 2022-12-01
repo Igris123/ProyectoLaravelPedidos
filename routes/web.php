@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Mail\PedidoFaadExpress;
+use App\Mail\FormularioMail;
 use Illuminate\Support\Facades\Mail;
 use App\Models\Pedido;
 use App\Http\Controllers\UserController;
@@ -61,13 +62,20 @@ Route::middleware([
     // Route::get('/modificarPedido', [App\Http\Controllers\modificarPedidoController::class, 'retornoModificarPedido'])->name('modificarPedido');
 });
 
-    
+Route::get('envio', function(){
+    $correo = new PedidoFaadExpress;
 
-// Route::get('envio', function(){
-//     $correo = new PedidoFaadExpress;
+    // email del cliente
+    Mail::to("juanpablog2.0@gmail.com")->send($correo); //a quien se lo queremos enviar
 
-//     //email del cliente
-//     Mail::to("aguasann@gmail.com")->send($correo); //a quien se lo queremos enviar
+    return "Encuesta enviada";
+});
 
-//     return "Mensaje enviado";
-// });
+Route::get('envio', function(){
+    $correo = new PedidoFaadExpress;
+
+    // email del cliente
+    Mail::to("juanpablog2.0@gmail.com")->send($correo); //a quien se lo queremos enviar
+
+    return "Mensaje enviado";
+});

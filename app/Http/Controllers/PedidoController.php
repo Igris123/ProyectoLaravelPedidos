@@ -7,6 +7,7 @@ use App\Models\Pedido;
 
 use Illuminate\Support\Facades\Mail;
 use App\Mail\PedidoFaadExpress;
+use App\Mail\FormularioMail;
 
 class PedidoController extends Controller
 {
@@ -99,6 +100,11 @@ class PedidoController extends Controller
         $pedidos->contacto = $request -> get('contacto');
         $pedidos->estado = $request -> get('estado');
 
+        if($pedidos->estado == "Entregado"){
+            Mail::to($request->user())
+            ->send(new FormularioMail());
+        }
+
         $pedidos->save();
 
         return redirect('/pedidos');
@@ -121,5 +127,3 @@ class PedidoController extends Controller
     
 
 }
-
-
