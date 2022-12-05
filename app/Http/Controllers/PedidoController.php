@@ -133,7 +133,6 @@ class PedidoController extends Controller
         $pedidos->contacto = $request -> get('contacto');
         $pedidos->estado = $request -> get('estado');
 
-<<<<<<< HEAD
         //Claves foraneas
         
         // $pedidos->servicio_id = $request -> get('servicio_id');
@@ -142,12 +141,10 @@ class PedidoController extends Controller
         // $pedidos->precio_id = $request -> get('precio_id');
 
         
-=======
         if($pedidos->estado == "Entregado"){
             Mail::to($request->user())
             ->send(new FormularioMail());
         }
->>>>>>> e164c88b82cf03c60040f7a7d731fdf80e3e082b
 
         $pedidos->save();
 
