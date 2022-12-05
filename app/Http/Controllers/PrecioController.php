@@ -4,6 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Precio;
+use App\Models\Servicio;
+use App\Models\Vehiculo;
+use App\Models\Pedido;
+use App\Models\User;
+
+
+
 
 class PrecioController extends Controller
 {

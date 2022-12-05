@@ -66,6 +66,9 @@ class User extends Authenticatable
         // 'profile_photo_url',
     ];
 
+    public function pedidos(){
+        return $this->hasMany(Pedido::class,'id');
+    }
 
  
 }

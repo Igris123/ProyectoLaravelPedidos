@@ -30,6 +30,19 @@ class Pedido extends Model
            
     }
 
+    public function precio(){
+        return $this->belongsTo(Precio::class,'precio_id');
+    }
+    public function servicio(){
+        return $this->belongsTo(servicio::class,'servicio_id');
+    }
+    public function user(){
+        return $this->belongsTo(User::class,'cliente_id');
+    }
+    public function vehiculo(){
+        return $this->belongsTo(Vehiculo::class,'vehiculo_id');
+    }
+
 
 
      

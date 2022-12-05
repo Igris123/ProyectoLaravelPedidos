@@ -12,7 +12,9 @@
     <table class="table table-dark table-striped mt-4">
         <thead>
             <tr>
+                @can('admin')
                 <th scope="col">ID</th>
+                @endcan
                 <th scope="col">Tipo servicio</th>
                 <th scope="col">Descripcion</th>
             </tr>
@@ -20,7 +22,9 @@
         <tbody>
             @foreach ($servicios as $servicio)
             <tr>
+                @can('admin')
                 <td>{{ $servicio->id}}</td>
+                @endcan
                 <td>{{ $servicio->tipo_serv}}</td>
                 <td>{{ $servicio->descripcion}}</td>
             </tr>

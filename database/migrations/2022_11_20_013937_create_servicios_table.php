@@ -16,12 +16,12 @@ return new class extends Migration
         Schema::create('servicios', function (Blueprint $table) {
             $table->engine="InnoDB"; 
             $table->id()->nullable();
-            $table->date('fecha')->nullable();
-            $table->time('hora')->nullable();
+            // $table->date('fecha')->nullable();
+            // $table->time('hora')->nullable();
             $table->string('tipo_serv')->nullable();
             $table->string('descripcion')->nullable();
-            $table->bigInteger('tipo_id')->unsigned()->nullable();
-            $table->foreign('tipo_id')->references('id')->on('tipos')->onDelete('cascade');
+            // $table->bigInteger('tipo_id')->unsigned()->nullable();
+            // $table->foreign('tipo_id')->references('id')->on('tipos')->onDelete('cascade');
             
             $table->timestamps();
         });

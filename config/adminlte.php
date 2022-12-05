@@ -427,7 +427,7 @@ return [
             'can'        => 'admin',
         ],
         [
-            'text'       => 'Realizar encargo',
+            'text'       => 'Pedidos',
             'icon_color' => 'purple',
             'url'        => 'pedidos',
         ],
