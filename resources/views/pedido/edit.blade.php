@@ -11,6 +11,7 @@
     <form action="/pedidos/{{$pedido->id}}" method="POST">
     @csrf
     @method('PUT')
+    @can('admin')
     <div class="mb-3">
         <label for="" class="form-label">ID</label>
         <input id="id" name="id" type="text" class="form-control" tabindex="1" value="{{$pedido->id}}" autofocus>
@@ -18,6 +19,7 @@
             <span class="error text-danger" for="input-id">{{ $errors->first('id')}}</span>
         @endif
     </div>
+    @endcan
     <div class="mb-3">
         <label for="" class="form-label">Destinatario</label>
         <input id="destinatario" name="destinatario" type="tel" class="form-control" tabindex="2" value="{{$pedido->destinatario}}" autofocus>

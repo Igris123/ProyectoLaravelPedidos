@@ -15,7 +15,18 @@ class UserSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
+    {    
+        User::create([
+
+        'rut' => '123123321',
+        'name' => 'Sin',
+        'apellido' => 'Asignar',
+        'email' => 'test@admin.cl',
+        'password' => bcrypt('12345678'),
+        'direccion' => 'Calle sin nombre 123',
+        'telefono' => '123456789',
+        ])->assignRole('Admin');
+
         User::create([
 
             'rut' => '123456789',

@@ -5,6 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Pedido;
 
+//Referencias
+use App\Models\User;
+use App\Models\Servicio;
+use App\Models\Vehiculo;
+use App\Models\Precio;
+
+
+
 use Illuminate\Support\Facades\Mail;
 use App\Mail\PedidoFaadExpress;
 
@@ -29,8 +37,18 @@ class PedidoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('pedido.create');
+    {   
+        //llamamos a los modelos
+        $pedidos = Pedido::all();
+        $users = User::all();
+        $servicios = Servicio::all();
+        $vehiculos = Vehiculo::all();
+        $precios = Precio::all();
+
+       
+        
+        return view('pedido.create')->with(compact('pedidos', 'users', 'servicios', 'vehiculos', 'precios'));
+        
     }
 
     /**
@@ -40,7 +58,10 @@ class PedidoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
+        //asignacion default valor vehiculo_id me tome en el index uwu
+        
+
         $pedidos = new Pedido();        
         $pedidos->id = $request -> get('id');
         $pedidos->destinatario = $request -> get('destinatario');
@@ -48,6 +69,12 @@ class PedidoController extends Controller
         $pedidos->descripcion = $request -> get('descripcion');
         $pedidos->contacto = $request -> get('contacto');
         $pedidos->estado = $request -> get('estado');
+        //Claves foraneas
+        
+        // $pedidos->servicio_id = $request -> get('servicio_id');
+        $pedidos->vehiculo_id = $request -> get('vehiculo_id');
+        $pedidos->cliente_id = $request -> get('cliente_id');
+        // $pedidos->precio_id = $request -> get('precio_id');
 
         $pedidos->save();
 
@@ -78,6 +105,12 @@ class PedidoController extends Controller
     public function edit($id)
     {
         $pedido = Pedido::find($id);
+        //llamamos a los modelos
+        $users = User::all();
+        $servicios = Servicio::all();
+        $vehiculos = Vehiculo::all();
+        $precios = Precio::all();
+
         return view('pedido.edit')->with('pedido', $pedido);
     }
 
@@ -98,6 +131,15 @@ class PedidoController extends Controller
         $pedidos->descripcion = $request -> get('descripcion');
         $pedidos->contacto = $request -> get('contacto');
         $pedidos->estado = $request -> get('estado');
+
+        //Claves foraneas
+        
+        // $pedidos->servicio_id = $request -> get('servicio_id');
+        $pedidos->vehiculo_id = $request -> get('vehiculo_id');
+        $pedidos->cliente_id = $request -> get('cliente_id');
+        // $pedidos->precio_id = $request -> get('precio_id');
+
+        
 
         $pedidos->save();
 

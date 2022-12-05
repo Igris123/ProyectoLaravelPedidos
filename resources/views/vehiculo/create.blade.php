@@ -47,7 +47,18 @@
     </div>
     <div class="mb-3">
         <label for="" class="form-label">Tipo</label>
-        <input id="tipo" name="tipo" type="tel" class="form-control" tabindex="2" value="{{old('tipo')}}" autofocus>
+        {{-- <input id="tipo" name="tipo" type="tel" class="form-control" tabindex="2" value="{{old('tipo')}}" autofocus> --}}
+        <br>
+        <div class="tipo form-check-inline ">
+            <input class="form-check-input" type="radio" name="tipo" id="tipo" value="Auto">
+            <label class="form-check-label" for="tipo">Auto</label>
+          </div>
+          <div class="tipo form-check-inline">
+            <input class="form-check-input" type="radio" name="tipo" id="tipo" value="Moto">
+            <label class="form-check-label" for="tipo">Moto</label>
+          </div>
+
+
         @if ($errors->has('tipo'))
             <span class="error text-danger" for="input-tipo">{{ $errors->first('tipo')}}</span>
         @endif
