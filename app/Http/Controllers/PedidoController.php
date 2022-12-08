@@ -46,8 +46,6 @@ class PedidoController extends Controller
         $vehiculos = Vehiculo::all();
         $precios = Precio::all();
 
-       
-        
         return view('pedido.create')->with(compact('pedidos', 'users', 'servicios', 'vehiculos', 'precios'));
         
     }
@@ -65,11 +63,17 @@ class PedidoController extends Controller
 
         $pedidos = new Pedido();        
         $pedidos->id = $request -> get('id');
+        //$pedidos->codigo_seguimiento = $request -> get('codigo_seguimiento');
         $pedidos->destinatario = $request -> get('destinatario');
         $pedidos->peso = $request -> get('peso');
         $pedidos->descripcion = $request -> get('descripcion');
         $pedidos->contacto = $request -> get('contacto');
         $pedidos->estado = $request -> get('estado');
+
+        // Codigo seguimiento
+        
+        $pedidos->codigo_seguimiento = time();
+
         //Claves foraneas
         
         // $pedidos->servicio_id = $request -> get('servicio_id');
@@ -127,10 +131,12 @@ class PedidoController extends Controller
         $pedidos = Pedido::find($id);
 
         $pedidos->id = $request -> get('id');
+        $pedidos->codigo_seguimiento = $request -> get('codigo_seguimiento');
         $pedidos->destinatario = $request -> get('destinatario');
         $pedidos->peso = $request -> get('peso');
         $pedidos->descripcion = $request -> get('descripcion');
         $pedidos->contacto = $request -> get('contacto');
+        $pedidos->email_contacto = $request -> get('email_contacto');
         $pedidos->estado = $request -> get('estado');
 
         //Claves foraneas
@@ -163,8 +169,4 @@ class PedidoController extends Controller
         $pedido -> delete();
         return redirect ('/pedidos');
     }
-
-
-    
-
 }

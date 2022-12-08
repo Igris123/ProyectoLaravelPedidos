@@ -14,12 +14,19 @@
     @can('admin')
     <div class="mb-3">
         <label for="" class="form-label">ID</label>
-        <input id="id" name="id" type="text" class="form-control" tabindex="1" value="{{$pedido->id}}" autofocus>
+        <input id="id" name="id" type="text" class="form-control" tabindex="1" value="{{$pedido->id}}" autofocus readonly>
         @if ($errors->has('id'))
             <span class="error text-danger" for="input-id">{{ $errors->first('id')}}</span>
         @endif
     </div>
     @endcan
+    <div class="mb-3">
+        <label for="" class="form-label">Codigo Seguimiento</label>
+        <input id="codigo_seguimiento" name="codigo_seguimiento" type="text" class="form-control" value="{{$pedido->id}}" autofocus readonly>
+        @if ($errors->has('codigo_seguimiento'))
+            <span class="error text-danger" for="input-codigo_seguimiento">{{ $errors->first('codigo_seguimiento')}}</span>
+        @endif
+    </div>
     <div class="mb-3">
         <label for="" class="form-label">Destinatario</label>
         <input id="destinatario" name="destinatario" type="tel" class="form-control" tabindex="2" value="{{$pedido->destinatario}}" autofocus>

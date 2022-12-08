@@ -16,13 +16,14 @@
                 @can('admin')
                 <th scope="col">ID</th>
                 @endcan
+                <th scope="col">Cod. Seguimiento</th>
                 <th scope="col">Destinatario</th>
                 <th scope="col">Contacto</th>
                 <th scope="col">Peso (kg)</th>
-                <th scope="col">Descripcion</th>
+                {{-- <th scope="col">Descripcion</th> --}}
                 <th scope="col">Estado</th>
-                <th scope="col">V-Asignado</th>
-                <th scope="col">Cliente</th>
+                <th scope="col">V. Asignado</th>
+                {{-- <th scope="col">Cliente</th> --}}
             </tr>
         </thead>
         <tbody>
@@ -31,20 +32,14 @@
                 @can('admin')
                 <td>{{ $pedido->id}}</td>
                 @endcan
+                <td>{{ $pedido->codigo_seguimiento}}</td>
                 <td>{{ $pedido->destinatario}}</td>
                 <td>{{ $pedido->contacto}}</td>
                 <td>{{ $pedido->peso}}</td>
-                <td>{{ $pedido->descripcion}}</td>
+                {{-- <td>{{ $pedido->descripcion}}</td> --}}
                 <td>{{ $pedido->estado}}</td>
-               
-                
-                    
-
                 <td>{{$pedido->vehiculo->patente}}</td>
-                <td>{{$pedido->user->name}} {{$pedido->user->apellido}}</td>
-                
-                
-
+                {{-- <td>{{$pedido->user->name}} {{$pedido->user->apellido}}</td> --}}
                 {{-- <td>{{ $pedido->estado}}</td> --}}
                 
                 

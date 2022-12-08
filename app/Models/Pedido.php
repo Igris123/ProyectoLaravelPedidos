@@ -23,9 +23,8 @@ class Pedido extends Model
     {
        //tablas a buscar xd
         return [
-            'destinatario' => $this->destinatario,
-
-            
+            'codigo_seguimiento' => $this->codigo_seguimiento,
+            // 'destinatario' => $this->destinatario,
         ];
            
     }

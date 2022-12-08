@@ -19,7 +19,7 @@
     <script>
       function validateForm(){
         var x = document.forms["myForm"]["searchText"].value;
-        if(x == "" || x.length < 3){
+        if(x == "" || x.length < 10){
           alert("Debe ingresar un código de seguimiento");
           return false;
         }

@@ -16,10 +16,12 @@ return new class extends Migration
         Schema::create('pedidos', function (Blueprint $table) {
             $table->engine="InnoDB"; 
             $table->id();
+            $table->bigInteger('codigo_seguimiento')->nullable();
             $table->string('destinatario')->nullable();            
             $table->Integer('peso')->nullable();
             $table->string('descripcion')->nullable();
-            $table->string('contacto')->nullable();
+            $table->string('contacto')->nullable(); //Telefono
+            $table->string('email_contacto')->nullable();
             $table->string('estado')->nullable();
 
             $table->bigInteger('vehiculo_id')->unsigned()->nullable();
