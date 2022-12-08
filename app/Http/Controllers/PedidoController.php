@@ -60,7 +60,6 @@ class PedidoController extends Controller
     {   
         //asignacion default valor vehiculo_id me tome en el index uwu
         
-
         $pedidos = new Pedido();        
         $pedidos->id = $request -> get('id');
         //$pedidos->codigo_seguimiento = $request -> get('codigo_seguimiento');
@@ -68,6 +67,7 @@ class PedidoController extends Controller
         $pedidos->peso = $request -> get('peso');
         $pedidos->descripcion = $request -> get('descripcion');
         $pedidos->contacto = $request -> get('contacto');
+        $pedidos->email_contacto = $request -> get('email_contacto');
         $pedidos->estado = $request -> get('estado');
 
         // Codigo seguimiento
@@ -109,6 +109,7 @@ class PedidoController extends Controller
      */
     public function edit($id)
     {
+        
         $pedido = Pedido::find($id);
         //llamamos a los modelos
         $users = User::all();

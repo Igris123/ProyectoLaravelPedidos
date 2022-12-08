@@ -22,7 +22,7 @@
     @endcan
     <div class="mb-3">
         <label for="" class="form-label">Codigo Seguimiento</label>
-        <input id="codigo_seguimiento" name="codigo_seguimiento" type="text" class="form-control" value="{{$pedido->id}}" autofocus readonly>
+        <input id="codigo_seguimiento" name="codigo_seguimiento" type="text" class="form-control" value="{{$pedido->codigo_seguimiento}}" autofocus readonly>
         @if ($errors->has('codigo_seguimiento'))
             <span class="error text-danger" for="input-codigo_seguimiento">{{ $errors->first('codigo_seguimiento')}}</span>
         @endif
@@ -56,6 +56,13 @@
         @endif
     </div>
     <div class="mb-3">
+        <label for="" class="form-label">email_contacto</label>
+        <input id="email_contacto" name="email_contacto" type="tel" class="form-control" tabindex="2" value="{{$pedido->email_contacto}}" autofocus>
+        @if ($errors->has('email_contacto'))
+            <span class="error text-danger" for="input-email_contacto">{{ $errors->first('email_contacto')}}</span>
+        @endif
+    </div>
+    <div class="mb-3">
         <label for="" class="form-label">Estado</label>
         <div class="form-group position-relative mb-3" >
             <select name="estado" id="estado" class="form-select">
@@ -74,6 +81,29 @@
         @if ($errors->has('estado'))
             <span class="error text-danger" for="input-estado">{{ $errors->first('estado')}}</span>
         @endif
+    </div>
+    <!-- VEHICULO_ID -->
+    <div class="mb-3">          
+        <label for="" class="form-label">Vehiculo</label>
+        <input id="vehiculo_id" name="vehiculo_id" type="tel" class="form-control" tabindex="2" value="{{$pedido->vehiculo_id}}" autofocus readonly>
+        <br>
+        <h4>Patente del vehiculo: {{$pedido->vehiculo->patente}}</h4>
+        @if ($errors->has('vehiculo_id'))
+            <span class="error text-danger" for="input-vehiculo_id">{{ $errors->first('vehiculo_id')}}</span>
+        @endif
+        
+    </div>
+
+    <!-- CLIENTE ID -->
+    <div class="mb-3">          
+        <label for="" class="form-label">Cliente</label>
+        <input id="cliente_id" name="cliente_id" type="tel" class="form-control" tabindex="2" value="{{$pedido->vehiculo_id}}" autofocus readonly>
+        <br>
+        <h4>Nombre Cliente: {{$pedido->user->name}} {{$pedido->user->apellido}}</h4>
+        @if ($errors->has('cliente_id'))
+            <span class="error text-danger" for="input-cliente_id">{{ $errors->first('cliente_id')}}</span>
+        @endif
+        
     </div>
     <a href="/pedidos" class="btn btn-secondary" tabindex="5">Cancelar</a>
     <button type="submit" class="btn btn-primary" tabindex="6">Guardar</button>
