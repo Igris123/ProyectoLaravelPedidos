@@ -213,7 +213,7 @@
       </td>
     </tr>
     <!-- end copy block -->
-
+    {{--
     <!-- start footer -->
     <tr>
       <td align="center" bgcolor="#e9ecef" style="padding: 24px;">
@@ -250,7 +250,7 @@
       </td>
     </tr>
     <!-- end footer -->
-
+    --}}
   </table>
   <!-- end body -->
 

@@ -23,12 +23,6 @@ composer require laravel/scout
 php artisan key:generate
 ```
 ```sh
-php artisan migrate
-```
-```sh
-php artisan make:auth
-```
-```sh
 composer require spatie/laravel-permission
 ```
 
@@ -42,7 +36,7 @@ npm run build
 
 * Migracion BD  
 ```sh
-php artisan migrate
+php artisan migrate --seed
 ```
 
 * Run  

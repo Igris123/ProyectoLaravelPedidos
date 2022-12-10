@@ -174,6 +174,7 @@
                 Descripcion: {{ $info->descripcion}}<br>
                 Número de contacto: {{ $info->contacto}}<br>
                 Estado de tu pedido: {{ $info->estado}}<br>
+                Codigo de Seguimiento: {{ $info->codigo_seguimiento}}<br>
             </p>
             </td>
           </tr>
@@ -203,7 +204,7 @@
           <tr>
             <td align="left" bgcolor="#ffffff" style="padding: 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;">
               <p style="margin: 0;">Si eso no funciona, copie y pegue el siguiente enlace en su navegador:</p>
-              <p style="margin: 0;"><a href="http://localhost:8000/" target="_blank">https://faadexpress.com/xxx-xxx-xxxx</a></p>
+              <p style="margin: 0;"><a href="http://localhost:8000/" target="_blank">https://faadexpress.com/</a></p>
             </td>
           </tr>
           <!-- end copy -->
@@ -225,7 +226,7 @@
       </td>
     </tr>
     <!-- end copy block -->
-
+  {{--
     <!-- start footer -->
     <tr>
       <td align="center" bgcolor="#e9ecef" style="padding: 24px;">
@@ -262,7 +263,7 @@
       </td>
     </tr>
     <!-- end footer -->
-
+  --}}
   </table>
   <!-- end body -->
 

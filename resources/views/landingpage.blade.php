@@ -42,7 +42,6 @@
                 <a class="nav-link" href="/register">Registrarse</a>
                 
               </li>
-                   
             </ul>
           </div>
         </div>
@@ -61,7 +60,7 @@
             <img src="img/rapidez.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption carousel-caption d-none d-md-block">
               <h5>Rapidez</h5>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, nulla, tempore. Deserunt excepturi quas vero.</p>
+                              <p>Al escoger el servicio personalizado de Faad Express, optas por un servicio que se asegura que el envio trate de llegar lo antes posible.</p>
                              
                               
             </div>
@@ -70,7 +69,7 @@
             <img src="img/seguridad.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption carousel-caption d-none d-md-block">
               <h5>Seguridad</h5>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, nulla, tempore. Deserunt excepturi quas vero.</p>
+                              <p>Tus productos estan asegurados con Faad Express</p>
                               
             </div>
           </div>
@@ -78,7 +77,7 @@
             <img src="img/confianza.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption carousel-caption d-none d-md-block ">
               <h5>Confianza</h5>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, nulla, tempore. Deserunt excepturi quas vero.</p>
+                              <p>Faad Express ofrece servicios de correspondencia, de encomienda o paqueteria, segun sea tu pedido. Ademas ofrece el envio express para envios mas rapidos.</p>
                               
             </div>
           </div>
@@ -132,7 +131,7 @@
                           <h2 style="text-align:center">Seguimiento</h2>
                           
                           <h5>Consulta el estado de tu envio</h3>
-                          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, labore reiciendis. Assumenda eos quod animi! Soluta nesciunt inventore dolores excepturi provident, culpa beatae tempora, explicabo corporis quibusdam corrupti. Autem, quaerat. Assumenda quo aliquam vel, nostrum explicabo ipsum dolor, ipsa perferendis porro doloribus obcaecati placeat natus iste odio est non earum?</p>
+                          <p>Con solo el codigo de tu producto, puedes consultar por el estado de tu pedido. Para mayor informacion, debes comunicarte con la operadora.</p>
                           <br>
                           
                           <a href="/seguimiento" class="btn btn-warning col-md-12 text-center">Consulta aqui</a>

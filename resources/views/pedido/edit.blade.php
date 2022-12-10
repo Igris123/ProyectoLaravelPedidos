@@ -11,7 +11,6 @@
     <form action="/pedidos/{{$pedido->id}}" method="POST">
     @csrf
     @method('PUT')
-    @can('admin')
     <div class="mb-3">
         <label for="" class="form-label">ID</label>
         <input id="id" name="id" type="text" class="form-control" tabindex="1" value="{{$pedido->id}}" autofocus readonly>
@@ -19,7 +18,6 @@
             <span class="error text-danger" for="input-id">{{ $errors->first('id')}}</span>
         @endif
     </div>
-    @endcan
     <div class="mb-3">
         <label for="" class="form-label">Codigo Seguimiento</label>
         <input id="codigo_seguimiento" name="codigo_seguimiento" type="text" class="form-control" value="{{$pedido->codigo_seguimiento}}" autofocus readonly>
@@ -29,35 +27,35 @@
     </div>
     <div class="mb-3">
         <label for="" class="form-label">Destinatario</label>
-        <input id="destinatario" name="destinatario" type="tel" class="form-control" tabindex="2" value="{{$pedido->destinatario}}" autofocus>
+        <input id="destinatario" name="destinatario" type="tel" class="form-control" tabindex="2" value="{{$pedido->destinatario}}" autofocus readonly>
         @if ($errors->has('destinatario'))
             <span class="error text-danger" for="input-destinatario">{{ $errors->first('destinatario')}}</span>
         @endif
     </div>
     <div class="mb-3">
         <label for="" class="form-label">Contacto</label>
-        <input id="contacto" name="contacto" type="tel" class="form-control" tabindex="2" value="{{$pedido->contacto}}" autofocus>
+        <input id="contacto" name="contacto" type="tel" class="form-control" tabindex="2" value="{{$pedido->contacto}}" autofocus readonly>
         @if ($errors->has('contacto'))
             <span class="error text-danger" for="input-contacto">{{ $errors->first('contacto')}}</span>
         @endif
     </div>
     <div class="mb-3">
         <label for="" class="form-label">Peso</label>
-        <input id="peso" name="peso" type="tel" class="form-control" tabindex="2" value="{{$pedido->peso}}" autofocus>
+        <input id="peso" name="peso" type="tel" class="form-control" tabindex="2" value="{{$pedido->peso}}" autofocus readonly>
         @if ($errors->has('peso'))
             <span class="error text-danger" for="input-peso">{{ $errors->first('peso')}}</span>
         @endif
     </div>
     <div class="mb-3">
         <label for="" class="form-label">descripcion</label>
-        <input id="descripcion" name="descripcion" type="tel" class="form-control" tabindex="2" value="{{$pedido->descripcion}}" autofocus>
+        <input id="descripcion" name="descripcion" type="tel" class="form-control" tabindex="2" value="{{$pedido->descripcion}}" autofocus readonly>
         @if ($errors->has('descripcion'))
             <span class="error text-danger" for="input-descripcion">{{ $errors->first('descripcion')}}</span>
         @endif
     </div>
     <div class="mb-3">
         <label for="" class="form-label">email_contacto</label>
-        <input id="email_contacto" name="email_contacto" type="tel" class="form-control" tabindex="2" value="{{$pedido->email_contacto}}" autofocus>
+        <input id="email_contacto" name="email_contacto" type="tel" class="form-control" tabindex="2" value="{{$pedido->email_contacto}}" autofocus readonly>
         @if ($errors->has('email_contacto'))
             <span class="error text-danger" for="input-email_contacto">{{ $errors->first('email_contacto')}}</span>
         @endif
@@ -69,6 +67,7 @@
                     <option value="Ingresado">Ingresado</option>
                     <option value="Recibido">Recibido</option>
                     <option value="En reparto">En reparto</option>
+                    <option value="Visita sin entrega">Visita sin entrega</option>
                     <option value="Entregado">Entregado</option>
             </select>
             <div class="form-control-icon"> 
