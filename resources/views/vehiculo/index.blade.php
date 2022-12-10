@@ -7,9 +7,10 @@
 @stop
 
 @section('content')
-    <p>Vehiculo index</p>
+    @can('admin')
     <a href="vehiculos/create" class="btn btn-primary">Crear</a>
-
+    @endcan
+    <br>
     <table id="vehiculo" class="table table-dark table-striped mt-4">
         <thead>
             <tr>
@@ -19,7 +20,9 @@
                 <th scope="col">Modelo</th>
                 <th scope="col">Año</th>
                 <th scope="col">Tipo</th>
+                @can('admin')
                 <th scope="col">Acciones</th>
+                @endcan
             </tr>
         </thead>
         <tbody>
@@ -34,12 +37,13 @@
                 
                 <td>
                     <form action="{{route ('vehiculos.destroy', $vehiculo->id)}}" method="POST">
-                    
+                    @can('admin')
                     <a class="btn btn-info" href="/vehiculos/{{ $vehiculo->id}}/edit">Editar</a>
                    
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger">Eliminar</button>
+                    @endcan
                     </form>
                 </td>
             </tr>
@@ -47,7 +51,7 @@
         </tbody>
     </table>
 @stop
-
+@can('admin')
 @section('css')
 <link rel="stylesheet" href="/css/admin_custom.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css"/>
@@ -153,3 +157,4 @@
         });
     </script>
 @stop
+@endcan

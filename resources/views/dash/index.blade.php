@@ -54,6 +54,7 @@
                     <a href="/pedidos" class="small-box-footer">Más Información <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
+            {{--
             <div class="col-lg-3 col-6">
                 <!-- small box -->
                 <div class="small-box bg-warning">
@@ -68,6 +69,7 @@
                     <a href="/cotizaciones" class="small-box-footer">Más Información <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
         </div>
+        --}}
     </div>
 </div>
 

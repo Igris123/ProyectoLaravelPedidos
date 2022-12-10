@@ -47,7 +47,7 @@ class UserSeeder extends Seeder
             'password' => bcrypt('12345678'),
             'direccion' => 'Calle falsa 123',
             'telefono' => '123456789',
-        ])->assignRole('user');
+        ])->assignRole('chofer');
 
     }
 }

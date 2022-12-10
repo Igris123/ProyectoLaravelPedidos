@@ -22,12 +22,12 @@ class RoleSeeder extends Seeder
         
         // create roles and assign created permissions
         $admin = Role::create(['name' => 'admin']);
-        $user = Role::create(['name' => 'user']);
+        $chofer = Role::create(['name' => 'chofer']);
       
         //crear permisos
-        Permission::create(['name' => 'ambos'])->syncRoles([$admin, $user]); //ver dashboard
+        Permission::create(['name' => 'ambos'])->syncRoles([$admin, $chofer]); //ver dashboard
         Permission::create(['name' => 'admin'])->syncRoles([$admin]); //ver dashboard
-        Permission::create(['name' => 'user'])->syncRoles([$user]); //ver dashboard   
+        Permission::create(['name' => 'chofer'])->syncRoles([$chofer]); //ver dashboard   
 
          
         

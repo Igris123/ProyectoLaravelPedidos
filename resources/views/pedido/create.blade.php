@@ -95,9 +95,9 @@
     <div class="mb-3">
         <label for="" class="form-label">Servicio</label>
         @if('peso' > 50)
-            <input id="servicio" name="servicio" type="tel" class="form-control" tabindex="2" value="Pesado" readonly autofocus>
+            <input id="servicio" name="servicio" type="tel" class="form-control" tabindex="2" value="Pesado" autofocus>
         @else
-        <input id="estado" name="estado" type="tel" class="form-control" tabindex="2" value="Ligero" readonly autofocus>
+        <input id="estado" name="estado" type="tel" class="form-control" tabindex="2" value="Ligero" autofocus>
         @endif
         @if ($errors->has('servicio'))
             <span class="error text-danger" for="input-servicio">{{ $errors->first('servicio')}}</span>

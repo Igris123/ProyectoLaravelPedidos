@@ -7,9 +7,9 @@
 @stop
 
 @section('content')
-    <p>pedido index</p>
+    @can('admin')
     <a href="pedidos/create" class="btn btn-primary">Crear</a>
-
+    @endcan
     <table id="pedidos" class="table table-dark table-striped mt-4">
         <thead>
             <tr>
@@ -35,10 +35,9 @@
                 <td>{{$pedido->vehiculo->patente}}</td>
                 <td>
                     <form action="{{route ('pedidos.destroy', $pedido->id)}}" method="POST">
-                    @can('admin')
                     <a class="btn btn-info" href="/pedidos/{{ $pedido->id}}/edit">Editar</a>
                     @csrf
-                    
+                    @can('admin')
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger">Eliminar</button>
                     </form>
@@ -49,7 +48,6 @@
         </tbody>
     </table>
 @stop
-
 @section('css')
 <link rel="stylesheet" href="/css/admin_custom.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css"/>

@@ -418,13 +418,13 @@ return [
             'text'       => 'Usuarios',
             'icon_color' => 'black',
             'url'        => 'users',
-            'can'        => 'admin',
+            // 'can'        => 'admin',
         ],
         [
             'text'       => 'Vehiculo',
             'icon_color' => 'green',
             'url'        => 'vehiculos',
-            'can'        => 'admin',
+            // 'can'        => 'admin',
         ],
         [
             'text'       => 'Pedidos',
