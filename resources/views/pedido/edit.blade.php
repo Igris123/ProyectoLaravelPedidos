@@ -68,6 +68,7 @@
                     <option value="Recibido">Recibido</option>
                     <option value="En reparto">En reparto</option>
                     <option value="Visita sin entrega">Visita sin entrega</option>
+                    <option value="Entrega con devolucion">Entrega con devolución</option>
                     <option value="Entregado">Entregado</option>
             </select>
             <div class="form-control-icon"> 

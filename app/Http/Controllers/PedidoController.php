@@ -16,11 +16,11 @@ use App\Models\Precio;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\PedidoFaadExpress;
 use App\Mail\FormularioMail;
+use App\Mail\VisitaSinEntrega;
+use App\Mail\EntregaConDevolucion;
 
 class PedidoController extends Controller
 {
-
-  
     /**
      * Display a listing of the resource.
      *
@@ -151,6 +151,16 @@ class PedidoController extends Controller
         if($pedidos->estado == "Entregado"){
             Mail::to($request->user())
             ->send(new FormularioMail());
+        }
+
+        elseif($pedidos->estado == "Visita sin entrega"){
+            Mail::to($request->user())
+            ->send(new VisitaSinEntrega($pedidos));
+        }
+
+        elseif($pedidos->estado == "Entrega con devolucion"){
+            Mail::to($request->user())
+            ->send(new EntregaConDevolucion($pedidos));
         }
 
         $pedidos->save();
