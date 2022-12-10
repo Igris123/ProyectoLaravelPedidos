@@ -70,9 +70,10 @@ class PedidoController extends Controller
         $pedidos->email_contacto = $request -> get('email_contacto');
         $pedidos->estado = $request -> get('estado');
 
-        // Codigo seguimiento
+        // Codigo seguimiento  // $pedidos->codigo_seguimiento = time();
         
-        $pedidos->codigo_seguimiento = time();
+        $codigo = time();
+        $pedidos->codigo_seguimiento = date(('mdHis'), $codigo);
 
         //Claves foraneas
         

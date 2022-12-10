@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('pedidos', function (Blueprint $table) {
             $table->engine="InnoDB"; 
             $table->id();
-            $table->bigInteger('codigo_seguimiento')->nullable();
+            $table->bigInteger('codigo_seguimiento')->nullable()->unique();
             $table->string('destinatario')->nullable();            
             $table->Integer('peso')->nullable();
             $table->string('descripcion')->nullable();
