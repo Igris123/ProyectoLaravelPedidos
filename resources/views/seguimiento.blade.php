@@ -133,7 +133,7 @@
                                     
                 <?php if($pedido->estado == "Ingresado"):?>
                 <div class="progress">
-                  <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 20%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 25%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                 </div> 
                 <?php elseif($pedido->estado == "Recibido"):?>
                 <div class="progress">
@@ -214,13 +214,14 @@
       
       
     </div>
+    
     </div>
-
-
+          
+          
 </section>
 
 {{-- FOOTER --}}
-<body>
+<!-- <body>
     <footer>
         <div class="container">
             <div class="row">
@@ -229,7 +230,7 @@
                 </div>
             </div>
         </div>
-</body>
+</body> -->
 
 {{-- FOOTER --}}
 
@@ -260,8 +261,11 @@
 
      
           
-    
- 
+    <footer class="bg-dark p-2 text-center">
+            <div class="container">
+                <p class="text-white">Derechos reservados ©Faad Express</p>
+            </div>
+    </footer>
         
 </body>
 </html>
