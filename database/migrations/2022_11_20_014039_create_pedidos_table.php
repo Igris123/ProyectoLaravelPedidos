@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('contacto')->nullable(); //Telefono
             $table->string('email_contacto')->nullable();
             $table->string('estado')->nullable();
+            $table->date('fecha_entrega')->nullable();
 
             $table->bigInteger('vehiculo_id')->unsigned()->nullable();
             $table->foreign('vehiculo_id')->references('id')->on('vehiculos')->onDelete('cascade');

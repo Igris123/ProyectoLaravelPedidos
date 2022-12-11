@@ -19,7 +19,7 @@
         @endif
     </div>
     <div class="mb-3">
-        <label for="" class="form-label">Codigo Seguimiento</label>
+        <label for="" class="form-label">Código Seguimiento</label>
         <input id="codigo_seguimiento" name="codigo_seguimiento" type="text" class="form-control" value="{{$pedido->codigo_seguimiento}}" autofocus readonly>
         @if ($errors->has('codigo_seguimiento'))
             <span class="error text-danger" for="input-codigo_seguimiento">{{ $errors->first('codigo_seguimiento')}}</span>
@@ -60,7 +60,7 @@
             <span class="error text-danger" for="input-email_contacto">{{ $errors->first('email_contacto')}}</span>
         @endif
     </div>
-    <div class="mb-3">
+    <div class="form mb-3">
         <label for="" class="form-label">Estado</label>
         <div class="form-group position-relative mb-3" >
             <select name="estado" id="estado" class="form-select">
@@ -82,6 +82,15 @@
             <span class="error text-danger" for="input-estado">{{ $errors->first('estado')}}</span>
         @endif
     </div>
+    
+    <div class="mb-3">
+        <label for="date" class="form-group">Fecha final de recepción</label>
+        <br>
+        <input id ="fecha_entrega" class ="form-control" type="date" value="{{$pedido->fecha_entrega}}" name="fecha_entrega" 
+        min="2023-01-01" max="2025-12-31" required>
+        
+    </div>
+    
     <!-- VEHICULO_ID -->
     <div class="mb-3">          
         <label for="" class="form-label">Vehiculo</label>
@@ -95,7 +104,7 @@
     </div>
 
     <!-- CLIENTE ID -->
-    <div class="mb-3">          
+    <div class="mb-3">
         <label for="" class="form-label">Cliente</label>
         <input id="cliente_id" name="cliente_id" type="tel" class="form-control" tabindex="2" value="{{$pedido->vehiculo_id}}" autofocus readonly>
         <br>
@@ -105,6 +114,8 @@
         @endif
         
     </div>
+
+
     <a href="/pedidos" class="btn btn-secondary" tabindex="5">Cancelar</a>
     <button type="submit" class="btn btn-primary" tabindex="6">Guardar</button>
     </form>

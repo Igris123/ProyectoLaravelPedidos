@@ -69,6 +69,7 @@ class PedidoController extends Controller
         $pedidos->contacto = $request -> get('contacto');
         $pedidos->email_contacto = $request -> get('email_contacto');
         $pedidos->estado = $request -> get('estado');
+        $pedidos->fecha_entrega = $request -> get('fecha_entrega');
 
         // Codigo seguimiento  // $pedidos->codigo_seguimiento = time();
         
@@ -76,11 +77,17 @@ class PedidoController extends Controller
         $pedidos->codigo_seguimiento = date(('mdHis'), $codigo);
 
         //Claves foraneas
-        
-        // $pedidos->servicio_id = $request -> get('servicio_id');
         $pedidos->vehiculo_id = $request -> get('vehiculo_id');
         $pedidos->cliente_id = $request -> get('cliente_id');
-        // $pedidos->precio_id = $request -> get('precio_id');
+
+        
+        //Calculo servicio
+        if($pedidos->peso <= 50){
+            $pedidos->servicio_id = 1;
+        }else{
+            $pedidos->servicio_id = 2;
+        }
+        
 
         $pedidos->save();
 
@@ -140,15 +147,17 @@ class PedidoController extends Controller
         $pedidos->contacto = $request -> get('contacto');
         $pedidos->email_contacto = $request -> get('email_contacto');
         $pedidos->estado = $request -> get('estado');
+        $pedidos->fecha_entrega = $request -> get('fecha_entrega');
 
         //Claves foraneas
-        
-        // $pedidos->servicio_id = $request -> get('servicio_id');
         $pedidos->vehiculo_id = $request -> get('vehiculo_id');
         $pedidos->cliente_id = $request -> get('cliente_id');
-        // $pedidos->precio_id = $request -> get('precio_id');
-
         
+        
+
+
+      
+        //Envio correo
         if($pedidos->estado == "Entregado"){
             Mail::to($request->user())
             ->send(new FormularioMail());

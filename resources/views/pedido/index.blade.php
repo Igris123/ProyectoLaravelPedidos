@@ -19,6 +19,7 @@
                 <th scope="col">Contacto</th>
                 <th scope="col">Peso (kg)</th>
                 <th scope="col">Estado</th>
+                <th scope="col">Fecha Entrega</th>
                 <th scope="col">V. Asignado</th>
                 <th scope="col">Acciones</th>
             </tr>
@@ -32,6 +33,7 @@
                 <td>{{ $pedido->contacto}}</td>
                 <td>{{ $pedido->peso}}</td>
                 <td>{{ $pedido->estado}}</td>
+                <td>{{ $pedido->fecha_entrega}}</td>
                 <td>{{$pedido->vehiculo->patente}}</td>
                 <td>
                     <form action="{{route ('pedidos.destroy', $pedido->id)}}" method="POST">
